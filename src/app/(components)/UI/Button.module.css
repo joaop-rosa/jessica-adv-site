@@ -1,0 +1,17 @@
+.button {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--thunder);
+  color: var(--rose-white);
+  cursor: pointer;
+  font-family: var(--font-lato);
+  font-size: 18px;
+}
+
+.icon {
+  margin-left: 10px;
+  width: 18px;
+}

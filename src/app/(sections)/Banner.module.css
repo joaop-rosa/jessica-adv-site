@@ -1,0 +1,54 @@
+.banner {
+  display: flex;
+  align-items: center;
+  padding: 20px 25px 0;
+  min-height: calc(100vh - var(--header-height));
+  background: linear-gradient(180deg, var(--mine-shaft) 0%, var(--abbey) 100%);
+  color: var(--rose-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 50px;
+}
+
+.description {
+  max-width: 450px;
+}
+
+.themis {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: auto;
+}
+
+.buttonWrapper {
+  margin-top: 10px;
+}
+
+.itemsList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.itemsList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.itemsList li svg {
+  width: 20px;
+  height: 20px;
+}
