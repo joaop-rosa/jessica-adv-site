@@ -1,0 +1,126 @@
+.socialMedias {
+  padding: 30px 0 50px;
+  background-color: var(--thunder);
+  --slide-height: calc(100vh / 3 + 50px);
+  --slide-spacing: 10px;
+  --slide-size: 30%;
+}
+
+.container {
+  padding: 0px 25px;
+}
+
+.title {
+  color: var(--rose-white);
+  font-size: 28px;
+  padding: 5px 0;
+}
+
+.imagesWrapper {
+  position: relative;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.imagesWrapper::after,
+.imagesWrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  z-index: 1;
+}
+
+.imagesWrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--thunder) 0%, transparent 100%);
+}
+
+.imagesWrapper::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--thunder) 0%, transparent 100%);
+}
+
+.imagesContainer {
+  display: flex;
+  height: 100%;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.imageSlide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: var(--slide-height);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.imageWrapper:hover {
+  cursor: pointer;
+}
+
+.hoverContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.videoIcon {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  width: 30px;
+  height: 30px;
+}
+
+.imageWrapper:hover .hoverContent {
+  display: flex;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.imageWrapper:hover .videoIcon {
+  opacity: 1;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
+@media screen and (max-width: 768px) {
+  .socialMedias {
+    --slide-size: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .socialMedias {
+    --slide-size: 70%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .socialMedias {
+    --slide-size: 80%;
+  }
+}

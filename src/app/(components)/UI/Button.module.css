@@ -9,6 +9,14 @@
   cursor: pointer;
   font-family: var(--font-lato);
   font-size: 18px;
+  box-shadow: 2px 3px 2px 0px var(--black);
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--rose-white);
+  color: var(--black);
+  box-shadow: 1px 1px 1px 0px var(--black);
 }
 
 .icon {

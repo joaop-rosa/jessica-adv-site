@@ -1,51 +1,67 @@
+"use client"
+
 import Image from "next/image"
 import s from "./Banner.module.css"
 import { Button } from "../(components)/UI/Button"
-import { ArrowRight } from "@geist-ui/icons"
-import { Shield } from "@geist-ui/icons"
+import { LiaArrowRightSolid } from "react-icons/lia"
+import { LiaShieldAltSolid } from "react-icons/lia"
+import { useMediaQuery } from "react-responsive"
+import { LiaBalanceScaleSolid } from "react-icons/lia"
+import { ImHammer2 } from "react-icons/im"
 
 export function Banner() {
+  const isTablet = useMediaQuery({ query: "(max-width: 768px)" })
+
   return (
     <section className={s.banner}>
+      <Image
+        priority
+        className={s.stoneBackground}
+        src="/stone-texture.jpg"
+        alt=""
+        width={3000}
+        height={3500}
+      />
+      <div className={s.stoneBackgroundScreen} />
       <div className={s.content}>
         <div className={s.titleWrapper}>
-          <h1>JÉSSICA BIRCK</h1>
-          <h2>Advogada | OAB/RS 133.315</h2>
+          <h1 className={s.title}>JÉSSICA BIRCK</h1>
+          <h2 className={s.subtitle}>Advogada | OAB/RS 133.315</h2>
         </div>
         <p className={s.description}>
           Defendendo seus direitos com dedicação, conhecimento jurídico sólido e
           atendimento personalizado em todas as áreas do direito.
         </p>
         <div className={s.buttonWrapper}>
-          <Button Icon={ArrowRight}>Entre em Contato</Button>
+          <Button Icon={LiaArrowRightSolid}>Entre em Contato</Button>
         </div>
         <ul className={s.itemsList}>
           <li>
-            <Image src={"/balance.svg"} alt="Balance" width={20} height={20} />
+            <LiaBalanceScaleSolid />
             Expertise Jurídica
           </li>
           <li>
-            <Shield />
+            <LiaShieldAltSolid />
             Atendimento Seguro
           </li>
           <li>
-            <Image
-              src={"/law-hammer.svg"}
-              alt="Balance"
-              width={20}
-              height={20}
-            />
+            <ImHammer2 />
             Todas as Áreas
           </li>
         </ul>
       </div>
-      <Image
-        alt="Estátua da deusa Thêmis"
-        src={"/themis.png"}
-        width={2000}
-        height={2000}
-        className={s.themis}
-      />
+
+      {!isTablet && (
+        <div className={s.themis}>
+          <Image
+            priority
+            alt="Estátua da deusa Thêmis"
+            src={"/themis.png"}
+            width={1250}
+            height={1536}
+          />
+        </div>
+      )}
     </section>
   )
 }
