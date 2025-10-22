@@ -3,30 +3,31 @@ import s from "./SocialMedias.module.css"
 import { LiaVideoSolid } from "react-icons/lia"
 import useEmblaCarousel from "embla-carousel-react"
 import Autoplay from "embla-carousel-autoplay"
+import { INSTAGRAM_LINK } from "@/constants/links"
 
 const MEDIAS = [
   {
-    link: "",
+    link: INSTAGRAM_LINK,
     imageSrc: "/social-media/social-media-1.png",
   },
   {
-    link: "",
+    link: INSTAGRAM_LINK,
     imageSrc: "/social-media/social-media-2.png",
   },
   {
-    link: "",
+    link: INSTAGRAM_LINK,
     imageSrc: "/social-media/social-media-3.png",
   },
   {
-    link: "",
+    link: INSTAGRAM_LINK,
     imageSrc: "/social-media/social-media-4.png",
   },
   {
-    link: "",
+    link: INSTAGRAM_LINK,
     imageSrc: "/social-media/social-media-5.png",
   },
   {
-    link: "",
+    link: INSTAGRAM_LINK,
     imageSrc: "/social-media/social-media-6.png",
   },
 ]
@@ -43,15 +44,20 @@ export function SocialMedias() {
       </div>
       <div className={s.imagesWrapper} ref={emblaRef}>
         <div className={s.imagesContainer}>
-          {MEDIAS.map(({ imageSrc }) => (
+          {MEDIAS.map(({ imageSrc, link }) => (
             <div className={s.imageSlide} key={imageSrc}>
               <div className={s.imageWrapper}>
-                <div className={s.hoverContent}>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={s.hoverContent}
+                >
                   <LiaVideoSolid
                     className={s.videoIcon}
                     color="var(--rose-white)"
                   />
-                </div>
+                </a>
                 <Image
                   className={s.image}
                   alt=""

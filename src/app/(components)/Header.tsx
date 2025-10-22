@@ -4,7 +4,6 @@ import Image from "next/image"
 import s from "./Header.module.css"
 import classNames from "classnames"
 import { useEffect, useState } from "react"
-import { Button } from "./UI/Button"
 
 export function Header() {
   const [isOnTop, setIsOnTop] = useState(true)
