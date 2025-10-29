@@ -14,15 +14,7 @@ export function Banner() {
 
   return (
     <section className={s.banner}>
-      <Image
-        priority
-        className={s.stoneBackground}
-        src="/stone-texture.jpg"
-        alt=""
-        width={3000}
-        height={3500}
-      />
-      <div className={s.stoneBackgroundScreen} />
+      <div className={s.backgroundScreen} />
       <div className={s.content}>
         <div className={s.titleWrapper}>
           <h1 className={s.title}>JÉSSICA BIRCK</h1>

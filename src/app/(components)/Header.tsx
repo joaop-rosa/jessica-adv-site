@@ -4,6 +4,7 @@ import Image from "next/image"
 import s from "./Header.module.css"
 import classNames from "classnames"
 import { useEffect, useState } from "react"
+import { MediaButton } from "./UI/MediaButton"
 
 export function Header() {
   const [isOnTop, setIsOnTop] = useState(true)
@@ -29,6 +30,12 @@ export function Header() {
         width={1766}
         height={500}
       />
+      <div className={s.mediaButtons}>
+        <MediaButton type="facebook" />
+        <MediaButton type="instagram" />
+        <MediaButton type="maps" />
+        <MediaButton type="whatsapp" />
+      </div>
     </header>
   )
 }

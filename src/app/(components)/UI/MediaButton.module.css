@@ -1,0 +1,19 @@
+.mediaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose-white);
+  gap: 5px;
+  font-size: 14px;
+}
+
+.mediaIcon {
+  width: 20px;
+  height: 20px;
+  color: inherit;
+}
+
+.mediaButton:hover,
+.mediaButton:focus-visible {
+  color: var(--silver-chalice);
+}

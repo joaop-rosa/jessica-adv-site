@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--header-height) 0 0 25px;
-  background: linear-gradient(180deg, var(--mine-shaft) 0%, var(--abbey) 100%);
+  background-image: url("/stone-texture-2.jpg");
+  background-repeat: repeat;
   color: var(--rose-white);
   position: relative;
   overflow: hidden;
@@ -21,7 +22,7 @@
   filter: grayscale(100%);
 }
 
-.stoneBackgroundScreen {
+.backgroundScreen {
   position: absolute;
   top: 0;
   left: 0;
