@@ -16,6 +16,8 @@
 .medias {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -28,4 +30,28 @@
 .copyright {
   color: var(--rose-white);
   font-size: 14px;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+@media screen and (max-width: 600px) {
+  .medias {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .medias > *:not(:last-child)::after {
+    display: none;
+  }
+
+  .logo {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .medias {
+    grid-template-columns: 1fr;
+  }
 }

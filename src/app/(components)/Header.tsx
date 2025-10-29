@@ -25,10 +25,10 @@ export function Header() {
     <header className={classNames(s.header, { [s.stickyHeader]: !isOnTop })}>
       <Image
         className={s.logo}
-        src="/logo.png"
+        src="/logo-header.png"
         alt="Logo"
-        width={1766}
-        height={500}
+        width={691}
+        height={126}
       />
       <div className={s.mediaButtons}>
         <MediaButton type="facebook" />

@@ -107,21 +107,27 @@
   object-position: top left;
 }
 
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1080px) {
   .socialMedias {
-    --slide-size: 24%;
+    --slide-size: 21%;
   }
 }
 
 @media screen and (max-width: 768px) {
   .socialMedias {
-    --slide-size: 50%;
+    --slide-size: 35%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .socialMedias {
-    --slide-size: 70%;
+    --slide-size: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .socialMedias {
+    --slide-size: 60%;
   }
 }
 

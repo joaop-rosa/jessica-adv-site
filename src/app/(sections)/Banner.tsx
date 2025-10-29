@@ -8,6 +8,7 @@ import { LiaShieldAltSolid } from "react-icons/lia"
 import { useMediaQuery } from "react-responsive"
 import { LiaBalanceScaleSolid } from "react-icons/lia"
 import { ImHammer2 } from "react-icons/im"
+import { WHATSAPP_LINK } from "@/constants/links"
 
 export function Banner() {
   const isTablet = useMediaQuery({ query: "(max-width: 768px)" })
@@ -16,16 +17,34 @@ export function Banner() {
     <section className={s.banner}>
       <div className={s.backgroundScreen} />
       <div className={s.content}>
-        <div className={s.titleWrapper}>
-          <h1 className={s.title}>JÉSSICA BIRCK</h1>
-          <h2 className={s.subtitle}>Advogada | OAB/RS 133.315</h2>
-        </div>
+        {isTablet ? (
+          <Image
+            priority
+            alt="Jéssica Birck Advogada | OAB/RS 133.315"
+            src={"/logo-center.png"}
+            className={s.logo}
+            width={940}
+            height={240}
+          />
+        ) : (
+          <Image
+            priority
+            alt="Jéssica Birck Advogada | OAB/RS 133.315"
+            src={"/logo-left.png"}
+            className={s.logo}
+            width={863}
+            height={194}
+          />
+        )}
+
         <p className={s.description}>
           Defendendo seus direitos com dedicação, conhecimento jurídico sólido e
           atendimento personalizado em todas as áreas do direito.
         </p>
         <div className={s.buttonWrapper}>
-          <Button Icon={LiaArrowRightSolid}>Entre em Contato</Button>
+          <Button href={WHATSAPP_LINK} Icon={LiaArrowRightSolid}>
+            Entre em contato
+          </Button>
         </div>
         <ul className={s.itemsList}>
           <li>
