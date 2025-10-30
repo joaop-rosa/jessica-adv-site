@@ -3,32 +3,35 @@ import s from "./SocialMedias.module.css"
 import { LiaVideoSolid } from "react-icons/lia"
 import useEmblaCarousel from "embla-carousel-react"
 import Autoplay from "embla-carousel-autoplay"
-import { INSTAGRAM_LINK } from "@/constants/links"
 
 const MEDIAS = [
   {
-    link: INSTAGRAM_LINK,
+    link: "https://www.instagram.com/reel/DQU4QhNjkKL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     imageSrc: "/social-media/social-media-1.png",
   },
   {
-    link: INSTAGRAM_LINK,
+    link: "https://www.instagram.com/reel/DQSNa1yDqPS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     imageSrc: "/social-media/social-media-2.png",
   },
   {
-    link: INSTAGRAM_LINK,
+    link: "https://www.instagram.com/reel/DQKid2PjpLV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     imageSrc: "/social-media/social-media-3.png",
   },
   {
-    link: INSTAGRAM_LINK,
+    link: "https://www.instagram.com/reel/DQDH9zGDpke/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     imageSrc: "/social-media/social-media-4.png",
   },
   {
-    link: INSTAGRAM_LINK,
+    link: "https://www.instagram.com/reel/DPzuZ8cjsR7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     imageSrc: "/social-media/social-media-5.png",
   },
   {
-    link: INSTAGRAM_LINK,
+    link: "https://www.instagram.com/reel/DPuWLkpjofc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     imageSrc: "/social-media/social-media-6.png",
+  },
+  {
+    link: "https://www.instagram.com/reel/DQAVO1FDht4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    imageSrc: "/social-media/social-media-7.png",
   },
 ]
 
