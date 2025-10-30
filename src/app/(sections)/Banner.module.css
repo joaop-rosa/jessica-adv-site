@@ -37,10 +37,6 @@
   margin-bottom: 10px;
 }
 
-.description {
-  max-width: 450px;
-}
-
 .themis {
   position: relative;
   bottom: 0;
@@ -90,12 +86,12 @@
 
 @media screen and (max-width: 768px) {
   .banner {
+    min-height: 550px;
     justify-content: center;
     padding: var(--header-height) 25px 0 25px;
   }
 
   .content {
-    padding-top: 40px;
     align-items: center;
     text-align: center;
   }

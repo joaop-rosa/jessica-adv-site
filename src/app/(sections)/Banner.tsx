@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import s from "./Banner.module.css"
 import { Button } from "../(components)/UI/Button"
@@ -37,10 +35,6 @@ export function Banner() {
           />
         )}
 
-        <p className={s.description}>
-          Defendendo seus direitos com dedicação, conhecimento jurídico sólido e
-          atendimento personalizado em todas as áreas do direito.
-        </p>
         <div className={s.buttonWrapper}>
           <Button href={WHATSAPP_LINK} Icon={LiaArrowRightSolid}>
             Entre em contato

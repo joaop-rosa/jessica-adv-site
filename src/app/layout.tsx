@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Lato } from "next/font/google"
 import "./globals.css"
 import { Header } from "./(components)/Header"
-import { Footer } from "./(components)/Footer"
 
 const lato = Lato({
   variable: "--font-lato",
@@ -25,7 +24,6 @@ export default function RootLayout({
       <body className={`${lato.variable}`}>
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   )
