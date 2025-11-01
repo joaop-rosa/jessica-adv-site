@@ -1,10 +1,7 @@
 .banner {
-  --banner-height: 620px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--header-height) 0 0 25px;
-  background-image: url("/stone-texture.jpg");
+  --banner-height: 650px;
+  padding: calc(var(--header-height) + 30px) 0 0 25px;
+  background-image: url("/stone-texture.png");
   background-repeat: repeat;
   color: var(--rose-white);
   position: relative;
@@ -22,12 +19,21 @@
   opacity: 0.9;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 .content {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 
 .logo {
@@ -38,14 +44,18 @@
 }
 
 .themis {
+  display: none;
   position: relative;
   bottom: 0;
   width: 50%;
   height: calc(var(--banner-height) - var(--header-height));
-  display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   flex-shrink: 0;
+}
+
+.themisEnabled {
+  display: flex;
 }
 
 .themis img {
@@ -74,21 +84,27 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
+  font-size: 16px;
   flex-wrap: nowrap;
 }
 
 .itemsList li svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
 }
 
 @media screen and (max-width: 768px) {
   .banner {
+    display: flex;
+    align-items: center;
     min-height: 550px;
-    justify-content: center;
     padding: var(--header-height) 25px 0 25px;
+  }
+
+  .container {
+    margin: auto;
+    justify-content: center;
   }
 
   .content {

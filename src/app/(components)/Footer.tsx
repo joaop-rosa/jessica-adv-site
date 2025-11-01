@@ -13,7 +13,6 @@ export function Footer() {
         height={240}
       />
       <div className={s.medias}>
-        <MediaButton type="facebook" hasText />
         <MediaButton type="instagram" hasText />
         <MediaButton type="whatsapp" hasText />
         <MediaButton type="maps" hasText />

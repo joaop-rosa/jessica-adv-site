@@ -4,16 +4,27 @@
   justify-content: center;
   color: var(--rose-white);
   gap: 5px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .mediaIcon {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
   color: inherit;
 }
 
 .mediaButton:hover,
 .mediaButton:focus-visible {
   color: var(--silver-chalice);
+}
+
+@media screen and (max-width: 500px) {
+  .mediaIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mediaButton {
+    font-size: 15px;
+  }
 }
