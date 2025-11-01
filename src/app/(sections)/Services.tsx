@@ -54,8 +54,8 @@ export function Services() {
       <div className={s.container}>
         <h2 className={s.title}>Áreas de Atuação</h2>
         <h4 className={s.description}>
-          Oferecemos assessoria jurídica especializada com atendimento 100%
-          online para todo o Brasil.
+          Oferecemos assessoria jurídica especializada, com a opção de
+          atendimento 100% online para todo o Brasil.
         </h4>
         <div className={s.cardsWrapper}>
           {CARDS.map(({ Icon, title, description }) => (

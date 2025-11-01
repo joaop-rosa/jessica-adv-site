@@ -1,9 +1,12 @@
 import Image from "next/image"
 import s from "./Banner.module.css"
 import { Button } from "../(components)/UI/Button"
-import { LiaArrowRightSolid, LiaCommentDotsSolid } from "react-icons/lia"
+import {
+  LiaArrowRightSolid,
+  LiaSuitcaseSolid,
+  LiaCommentDotsSolid,
+} from "react-icons/lia"
 import { useMediaQuery } from "react-responsive"
-import { LiaBalanceScaleSolid } from "react-icons/lia"
 import { ImHammer2 } from "react-icons/im"
 import { WHATSAPP_LINK } from "@/constants/links"
 import cn from "classnames"
@@ -45,8 +48,8 @@ export function Banner() {
           </div>
           <ul className={s.itemsList}>
             <li>
-              <LiaBalanceScaleSolid />
-              Expertise Jurídica
+              <LiaSuitcaseSolid />
+              Atuação Estratégica
             </li>
             <li>
               <LiaCommentDotsSolid />
