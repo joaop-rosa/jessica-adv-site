@@ -1,11 +1,5 @@
-import {
-  FACEBOOK_LINK,
-  INSTAGRAM_LINK,
-  MAPS_LINK,
-  WHATSAPP_LINK,
-} from "@/constants/links"
+import { INSTAGRAM_LINK, MAPS_LINK, WHATSAPP_LINK } from "@/constants/links"
 import Link from "next/link"
-import { LiaFacebookSquare } from "react-icons/lia"
 import { LiaMapMarkerSolid } from "react-icons/lia"
 import { LiaInstagram } from "react-icons/lia"
 import { LiaWhatsapp } from "react-icons/lia"
@@ -15,7 +9,7 @@ export function MediaButton({
   type,
   hasText = false,
 }: {
-  type: "maps" | "instagram" | "facebook" | "whatsapp"
+  type: "maps" | "instagram" | "whatsapp"
   hasText?: boolean
 }) {
   const typeMap = {
@@ -28,11 +22,6 @@ export function MediaButton({
       link: INSTAGRAM_LINK,
       Icon: LiaInstagram,
       text: "Instagram",
-    },
-    facebook: {
-      link: FACEBOOK_LINK,
-      Icon: LiaFacebookSquare,
-      text: "Facebook",
     },
     whatsapp: {
       link: WHATSAPP_LINK,

@@ -23,18 +23,20 @@ export function Header() {
 
   return (
     <header className={classNames(s.header, { [s.stickyHeader]: !isOnTop })}>
-      <Image
-        className={s.logo}
-        src="/logo-header.png"
-        alt="Logo"
-        width={691}
-        height={126}
-      />
-      <div className={s.mediaButtons}>
-        <MediaButton type="facebook" />
-        <MediaButton type="instagram" />
-        <MediaButton type="maps" />
-        <MediaButton type="whatsapp" />
+      <div className={s.content}>
+        <Image
+          className={s.logo}
+          src="/logo-header.png"
+          alt="Logo"
+          width={691}
+          height={126}
+          fetchPriority="high"
+        />
+        <div className={s.mediaButtons}>
+          <MediaButton type="instagram" />
+          <MediaButton type="maps" />
+          <MediaButton type="whatsapp" />
+        </div>
       </div>
     </header>
   )

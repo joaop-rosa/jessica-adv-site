@@ -34,11 +34,10 @@
   text-wrap: pretty;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
   .medias {
-    display: grid;
-    gap: 15px;
-    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    gap: 25px;
   }
 
   .medias > *:not(:last-child)::after {
@@ -47,11 +46,5 @@
 
   .logo {
     max-width: 250px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .medias {
-    grid-template-columns: 1fr;
   }
 }
