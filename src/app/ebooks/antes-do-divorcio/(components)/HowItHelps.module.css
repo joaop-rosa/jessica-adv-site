@@ -1,0 +1,159 @@
+.section {
+  padding: 7rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-main);
+}
+
+.container {
+  max-width: 56rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.headerIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.iconBox {
+  padding: 1rem;
+  background-color: rgba(234, 208, 179, 0.1);
+  border-radius: 1rem;
+}
+
+.lightbulbIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--color-champagne);
+}
+
+.title {
+  font-family: serif;
+  font-size: 2.25rem;
+  color: var(--color-champagne);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(156, 91, 64, 0.3),
+    transparent
+  );
+  max-width: 20rem;
+  margin: 0 auto 3.5rem auto;
+}
+
+.quoteBox {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(156, 91, 64, 0.2);
+  border-left: 4px solid var(--color-terracotta);
+  padding: 2.5rem;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.quoteText {
+  font-size: 1.25rem;
+  color: var(--text-grey);
+  margin-bottom: 1rem;
+}
+
+.quoteText:last-child {
+  margin-bottom: 0;
+}
+
+.highlightText {
+  font-weight: 500;
+  color: var(--color-terracotta);
+}
+
+.listSubtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-white);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.benefitsGrid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.benefitCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background-color: var(--bg-card);
+  padding: 1.75rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(156, 91, 64, 0.2);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 300ms;
+}
+
+.benefitCard:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-color: rgba(156, 91, 64, 0.4);
+}
+
+.cardIconBox {
+  padding: 0.3rem;
+  background-color: rgba(156, 91, 64, 0.2);
+  border-radius: 50px;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
+.shieldIcon {
+  width: 100%;
+  height: 100%;
+  color: var(--color-terracotta);
+}
+
+.cardText {
+  color: var(--text-grey);
+  font-size: 1.125rem;
+  line-height: 1.625;
+  padding-top: 0.25rem;
+}
+
+.finalCard {
+  background-color: var(--bg-card);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  color: var(--text-white);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.finalText {
+  font-size: 1.25rem;
+  color: var(--text-grey);
+  text-align: center;
+  line-height: 1.625;
+}
+
+.boldText {
+  font-weight: 700;
+  color: var(--color-terracotta);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
