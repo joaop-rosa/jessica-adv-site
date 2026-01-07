@@ -3,6 +3,7 @@ import {
   MdOutlineShield as Shield,
 } from "react-icons/md"
 import s from "./HowItHelps.module.css"
+import { CTAButton } from "./UI/CTAButton"
 
 export function HowItHelps() {
   const benefits = [
@@ -62,6 +63,10 @@ export function HowItHelps() {
             <span className={s.boldText}> desgaste emocional</span> e
             <span className={s.boldText}> dinheiro</span>.
           </p>
+        </div>
+
+        <div className={s.buttonWrapper}>
+          <CTAButton>Quero Adquirir</CTAButton>
         </div>
       </div>
     </section>

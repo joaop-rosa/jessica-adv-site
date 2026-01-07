@@ -92,7 +92,7 @@
 
 .benefitCard {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.25rem;
   background-color: var(--bg-card);
   padding: 1.75rem;
@@ -150,6 +150,13 @@
 .boldText {
   font-weight: 700;
   color: var(--color-terracotta);
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
 }
 
 @media (min-width: 768px) {

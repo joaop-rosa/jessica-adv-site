@@ -3,6 +3,9 @@
 import { Banner } from "./(components)/Banner"
 import { ForWho } from "./(components)/ForWho"
 import { HowItHelps } from "./(components)/HowItHelps"
+import { ImportantNote } from "./(components)/ImportantNote"
+import { SaveMoney } from "./(components)/SaveMoney"
+import { WhatYouReceive } from "./(components)/WhatYouReceive"
 import { WhatYouWillFind } from "./(components)/WhatYouWillFind"
 import s from "./page.module.css"
 
@@ -13,6 +16,9 @@ export default function AntesDoDivorcio() {
       <ForWho />
       <WhatYouWillFind />
       <HowItHelps />
+      <SaveMoney />
+      <ImportantNote />
+      <WhatYouReceive />
     </div>
   )
 }
