@@ -1,6 +1,8 @@
 "use client"
 
+import { Footer } from "@/app/(components)/Footer"
 import { Banner } from "./(components)/Banner"
+import { FinalMessage } from "./(components)/FinalMessage"
 import { ForWho } from "./(components)/ForWho"
 import { HowItHelps } from "./(components)/HowItHelps"
 import { ImportantNote } from "./(components)/ImportantNote"
@@ -19,6 +21,8 @@ export default function AntesDoDivorcio() {
       <SaveMoney />
       <ImportantNote />
       <WhatYouReceive />
+      <FinalMessage />
+      <Footer />
     </div>
   )
 }

@@ -7,6 +7,10 @@
   gap: 30px;
 }
 
+.beforeDivorceFooter {
+  background-color: rgba(26, 27, 30);
+}
+
 .logo {
   width: 100%;
   max-width: 300px;
