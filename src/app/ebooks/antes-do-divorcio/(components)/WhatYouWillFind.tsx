@@ -1,7 +1,8 @@
 import { FaCheck as Check } from "react-icons/fa6"
 import { IoBookOutline as BookOpen } from "react-icons/io5"
-import s from "./WhatYouWillFind.module.css"
+import { EbookSection } from "./UI/EbookSection"
 import { CTAButton } from "./UI/CTAButton"
+import s from "./WhatYouWillFind.module.css"
 
 export function WhatYouWillFind() {
   const topics = [
@@ -17,49 +18,41 @@ export function WhatYouWillFind() {
   ]
 
   return (
-    <section className={s.section}>
-      <div className={s.container}>
-        <div className={s.headerIconWrapper}>
-          <div className={s.iconBox}>
-            <BookOpen className={s.bookIcon} />
-          </div>
-        </div>
+    <EbookSection
+      title="O que você vai encontrar neste e-book"
+      className={s.section}
+      icon={BookOpen}
+    >
+      <p className={s.description}>
+        Um guia claro, direto e humano, escrito por uma advogada de família, com
+        foco em prevenção de erros e proteção de direitos.
+      </p>
 
-        <h2 className={s.title}>O que você vai encontrar neste e-book</h2>
+      <p className={s.subtitle}>Você vai aprender:</p>
 
-        <div className={s.divider}></div>
+      <ul className={s.list}>
+        {topics.map((topic, index) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          <li key={index} className={s.listItem}>
+            <div className={s.checkBox}>
+              <Check className={s.checkIcon} strokeWidth={3} />
+            </div>
+            <span className={s.itemText}>{topic}</span>
+          </li>
+        ))}
+      </ul>
 
-        <p className={s.description}>
-          Um guia claro, direto e humano, escrito por uma advogada de família,
-          com foco em prevenção de erros e proteção de direitos.
+      <div className={s.bottomCard}>
+        <p className={s.cardText}>
+          Tudo em linguagem simples,{" "}
+          <span className={s.boldText}>sem juridiquês</span> e sem promessas
+          irreais.
         </p>
-
-        <p className={s.subtitle}>Você vai aprender:</p>
-
-        <ul className={s.list}>
-          {topics.map((topic, index) => (
-            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-            <li key={index} className={s.listItem}>
-              <div className={s.checkBox}>
-                <Check className={s.checkIcon} strokeWidth={3} />
-              </div>
-              <span className={s.itemText}>{topic}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className={s.bottomCard}>
-          <p className={s.cardText}>
-            Tudo em linguagem simples,{" "}
-            <span className={s.boldText}>sem juridiquês</span> e sem promessas
-            irreais.
-          </p>
-        </div>
-
-        <div className={s.buttonWrapper}>
-          <CTAButton>Quero Adquirir</CTAButton>
-        </div>
       </div>
-    </section>
+
+      <div className={s.buttonWrapper}>
+        <CTAButton>Quero Adquirir</CTAButton>
+      </div>
+    </EbookSection>
   )
 }

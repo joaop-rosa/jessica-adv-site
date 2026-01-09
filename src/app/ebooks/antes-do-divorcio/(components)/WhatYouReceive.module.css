@@ -1,115 +1,11 @@
 .section {
-  padding: 0 1.5rem 7rem;
+  padding: 0 24px 112px;
   background-color: var(--bg-card);
-}
-
-.container {
-  max-width: 56rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.iconWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.iconBox {
-  padding: 1rem;
-  background-color: rgba(156, 91, 64, 0.1);
-  border-radius: 1rem;
-}
-
-.mainIcon {
-  width: 1.75rem;
-  height: 1.75rem;
-  color: var(--color-terracotta);
-}
-
-.title {
-  font-family: serif;
-  font-size: 2.25rem;
-  color: var(--color-champagne);
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .title {
-    font-size: 3rem;
-  }
-}
-
-.divider {
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(156, 91, 64, 0.3),
-    transparent
-  );
-  max-width: 20rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3.5rem;
-}
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.card {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  background-color: var(--bg-main);
-  padding: 2rem;
-  border-radius: 1.5rem;
-  border: 1px solid rgba(156, 91, 64, 0.2);
-  transition: all 300ms;
-}
-
-.card:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  border-color: rgba(156, 91, 64, 0.4);
-}
-
-.cardIconBox {
-  padding: 0.75rem;
-  background-color: rgba(156, 91, 64, 0.2);
-  border-radius: 1rem;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cardIcon {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--color-terracotta);
-}
-
-.cardText {
-  color: var(--text-grey);
-  font-size: 1.125rem;
-  line-height: 1.625;
 }
 
 .buttonWrapper {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 48px;
 }

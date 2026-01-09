@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
 .page {
   --bg-main: #1f2023;
   --bg-main-2: #1a1b1e;
@@ -5,10 +7,12 @@
   --color-champagne: #ead0b3;
   --color-terracotta: #9c5b40;
   --color-terracotta-hover: #874d35;
+  --font-family-crimson: "Crimson Pro", Georgia, serif;
 
   --text-white: #f3f4f6;
   --text-grey: #d1d5db;
 
   background-color: var(--bg-main);
   min-height: 100vh;
+  font-family: var(--font-family-crimson);
 }

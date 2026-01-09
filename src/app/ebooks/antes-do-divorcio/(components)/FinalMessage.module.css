@@ -1,5 +1,5 @@
 .section {
-  padding: 7rem 1.5rem;
+  padding: 112px 24px;
   position: relative;
   overflow: hidden;
   background-color: var(--bg-main);
@@ -16,32 +16,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .iconBox {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 16px;
   background-color: rgba(156, 91, 64, 0.1);
-  border-radius: 1rem;
+  border-radius: 16px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .heartIcon {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 28px;
+  height: 28px;
   color: var(--color-terracotta);
 }
 
 .blobTop {
   position: absolute;
-  top: 2.5rem;
-  left: 5rem;
-  width: 18rem;
-  height: 18rem;
+  top: 40px;
+  left: 80px;
+  width: 288px;
+  height: 288px;
   background-color: rgba(156, 91, 64, 0.1);
   border-radius: 9999px;
   filter: blur(64px);
@@ -49,17 +49,17 @@
 
 .blobBottom {
   position: absolute;
-  bottom: 5rem;
-  right: 2.5rem;
-  width: 24rem;
-  height: 24rem;
+  bottom: 80px;
+  right: 40px;
+  width: 384px;
+  height: 384px;
   background-color: rgba(234, 208, 179, 0.1);
   border-radius: 9999px;
   filter: blur(64px);
 }
 
 .container {
-  max-width: 56rem;
+  max-width: 896px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -70,20 +70,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
+  gap: 16px;
+  margin-bottom: 48px;
 }
 
 .title {
-  font-family: serif;
-  font-size: 2.25rem;
+  font-size: 36px;
   color: var(--color-champagne);
   text-align: center;
 }
 
 @media (min-width: 768px) {
   .title {
-    font-size: 3rem;
+    font-size: 48px;
   }
 }
 
@@ -95,25 +94,25 @@
     rgba(156, 91, 64, 0.3),
     transparent
   );
-  max-width: 20rem;
+  max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 3.5rem;
+  margin-bottom: 56px;
 }
 
 .card {
   background-color: var(--bg-card);
-  padding: 3.5rem;
-  border-radius: 1.5rem;
+  padding: 56px;
+  border-radius: 24px;
   border: 1px solid rgba(156, 91, 64, 0.2);
-  margin-bottom: 4rem;
+  margin-bottom: 64px;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 40px;
 }
 
 .mainText {
-  font-size: 1.5rem;
+  font-size: 24px;
   line-height: 1.625;
   color: var(--text-grey);
   text-align: center;
@@ -122,7 +121,7 @@
 
 @media (min-width: 768px) {
   .mainText {
-    font-size: 1.875rem;
+    font-size: 30px;
   }
 }
 
@@ -139,13 +138,13 @@
     rgba(156, 91, 64, 0.2),
     transparent
   );
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .subText {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 20px;
+  line-height: 28px;
   color: var(--text-grey);
   text-align: center;
 }
@@ -156,7 +155,7 @@
 }
 
 .finalText {
-  font-size: 1.25rem;
+  font-size: 20px;
   line-height: 1.625;
   color: var(--text-grey);
   text-align: center;
@@ -165,7 +164,7 @@
 .finalHighlight {
   color: var(--color-terracotta);
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 24px;
 }
 
 .ctaWrapper {
@@ -176,14 +175,14 @@
 }
 
 .ctaTitle {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 500;
   color: var(--text-white);
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
 .ctaSubtitle {
-  font-size: 1.125rem;
+  font-size: 18px;
   color: var(--text-grey);
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 }

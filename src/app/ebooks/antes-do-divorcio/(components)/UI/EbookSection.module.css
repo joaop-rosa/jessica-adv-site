@@ -1,0 +1,53 @@
+.section {
+  padding: 112px 24px;
+}
+
+.container {
+  max-width: 896px;
+  margin: 0 auto;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.iconBox {
+  padding: 16px;
+  background-color: rgba(156, 91, 64, 0.1);
+  border-radius: 16px;
+}
+
+.default {
+  width: 28px;
+  height: 28px;
+  color: var(--color-terracotta);
+}
+
+.title {
+  font-size: 36px;
+  color: var(--color-champagne);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(156, 91, 64, 0.3),
+    transparent
+  );
+  max-width: 320px;
+  margin: 0 auto 56px auto;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+}
