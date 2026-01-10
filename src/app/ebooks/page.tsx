@@ -1,3 +1,8 @@
 "use client"
 
-export default function Ebooks() {}
+import { ROUTES } from "@/constants/routes"
+import { redirect } from "next/navigation"
+
+export default function Ebooks() {
+  return redirect(ROUTES.BEFORE_DIVORCE_EBOOK)
+}
