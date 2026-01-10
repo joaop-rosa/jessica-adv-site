@@ -10,6 +10,17 @@
   --sticky-header-height: calc(var(--header-height) / 2 + 20px);
   --abbey: #4f5257;
   --iron: #dadedf;
+
+  /* Before divorce */
+  --shark-2: #1f2023;
+  --shark-3: #2c2d31;
+  --just-right: #ead0b3;
+  --sepia-skin: #9c5b40;
+  --potters-clay: #874d35;
+  --font-family-crimson: "Crimson Pro", Georgia, serif;
+
+  --athens-gray: #f3f4f6;
+  --mischka: #d1d5db;
 }
 
 html,

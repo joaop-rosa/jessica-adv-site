@@ -24,12 +24,12 @@
 .default {
   width: 28px;
   height: 28px;
-  color: var(--color-terracotta);
+  color: var(--sepia-skin);
 }
 
 .title {
   font-size: 36px;
-  color: var(--color-champagne);
+  color: var(--just-right);
   margin-bottom: 24px;
   text-align: center;
 }
