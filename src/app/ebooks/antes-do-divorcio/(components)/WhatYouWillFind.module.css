@@ -1,0 +1,91 @@
+.section {
+  background-color: var(--shark-3);
+}
+
+.description {
+  font-size: 20px;
+  color: var(--mischka);
+  margin-bottom: 40px;
+  text-align: center;
+  line-height: 1.625;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--athens-gray);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 48px;
+  padding: 0;
+  list-style: none;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  cursor: default;
+}
+
+.checkBox {
+  padding: 6px;
+  background-color: rgba(156, 91, 64, 0.2);
+  border-radius: 9999px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: background-color 300ms;
+  width: 29px;
+  height: 29px;
+}
+
+.listItem:hover .checkBox {
+  background-color: rgba(156, 91, 64, 0.3);
+}
+
+.checkIcon {
+  width: 100%;
+  height: 100%;
+  color: var(--sepia-skin);
+}
+
+.itemText {
+  color: var(--mischka);
+  font-size: 18px;
+  line-height: 1.625;
+}
+
+.bottomCard {
+  background-color: var(--shark-2);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(156, 91, 64, 0.1);
+}
+
+.cardText {
+  font-size: 20px;
+  color: var(--mischka);
+  text-align: center;
+  line-height: 1.625;
+}
+
+.boldText {
+  font-weight: 500;
+  color: var(--just-right);
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}

@@ -1,5 +1,5 @@
 .socialMedias {
-  padding: 30px 0 50px;
+  padding: 50px 0 100px;
   background-color: var(--thunder);
   --slide-height: calc(100vh / 3 + 50px);
   --slide-spacing: 10px;

@@ -1,0 +1,63 @@
+.section {
+  --divider-color: rgba(156, 91, 64, 0.3);
+  --accent-icon-alpha-10: rgba(156, 91, 64, 0.1);
+
+  padding: 7rem 1.5rem;
+  background-color: #1a1b1e;
+}
+
+.intro {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--mischka);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.infoBox {
+  margin-top: 3.5rem;
+  background-color: transparent;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(156, 91, 64, 0.2);
+}
+
+.infoText {
+  font-size: 1.25rem;
+  line-height: 1.625;
+  color: var(--athens-gray);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaBox {
+  background-color: var(--shark-3);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  color: var(--athens-gray);
+}
+
+.ctaText {
+  font-size: 1.25rem;
+  line-height: 1.625;
+  font-weight: 300;
+}
+
+.highlight {
+  font-weight: 500;
+  color: var(--just-right);
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}

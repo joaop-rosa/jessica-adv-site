@@ -1,0 +1,39 @@
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--sepia-skin);
+  color: var(--athens-gray);
+  font-family: var(--font-family-crimson);
+  font-weight: 500;
+  font-size: 20px;
+  padding: 20px 40px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(156, 91, 64, 0.1),
+    0 2px 4px -1px rgba(156, 91, 64, 0.06);
+  transition: all 500ms;
+}
+
+.ctaButtonSmall {
+  font-size: 18px;
+  padding: 15px 30px;
+}
+
+.ctaButton:hover {
+  background-color: var(--potters-clay);
+  transform: scale(1.02);
+  box-shadow: 0 10px 15px -3px rgba(156, 91, 64, 0.1),
+    0 4px 6px -2px rgba(156, 91, 64, 0.05);
+}
+
+.arrowIcon {
+  width: 20px;
+  height: 20px;
+  transition: transform 300ms;
+}
+
+.ctaButton:hover .arrowIcon {
+  transform: translateX(4px);
+}

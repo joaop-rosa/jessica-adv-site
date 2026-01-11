@@ -1,0 +1,11 @@
+.section {
+  padding: 0 24px 112px;
+  background-color: var(--shark-3);
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
