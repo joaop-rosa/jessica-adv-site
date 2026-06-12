@@ -1,79 +1,164 @@
+"use client"
+
+import type { Variants } from "framer-motion"
+import { motion } from "framer-motion"
 import Image from "next/image"
-import s from "./Banner.module.css"
-import { Button } from "../(components)/UI/Button"
+import Link from "next/link"
 import {
-  LiaArrowRightSolid,
-  LiaSuitcaseSolid,
-  LiaCommentDotsSolid,
-} from "react-icons/lia"
-import { useMediaQuery } from "react-responsive"
-import { ImHammer2 } from "react-icons/im"
+  FaGlobeAmericas,
+  FaInstagram,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+} from "react-icons/fa"
 import { WHATSAPP_LINK } from "@/constants/links"
-import cn from "classnames"
+import { ROUTES } from "@/constants/routes"
+import s from "./Banner.module.css"
 
 export function Banner() {
-  const isTablet = useMediaQuery({ query: "(max-width: 768px)" })
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  }
+
+  const imageVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 1 },
+    },
+  }
+
+  const badgeVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { delay: 1, duration: 0.6, ease: "easeOut" },
+    },
+  }
 
   return (
     <section className={s.banner}>
-      <div className={s.backgroundScreen} />
       <div className={s.container}>
-        <div className={s.content}>
-          {isTablet ? (
-            <Image
-              fetchPriority="high"
-              priority
-              alt="Jéssica Birck Advogada | OAB/RS 133.315"
-              src={"/logo-center.png"}
-              className={s.logo}
-              width={940}
-              height={240}
-            />
-          ) : (
-            <Image
-              fetchPriority="high"
-              priority
-              alt="Jéssica Birck Advogada | OAB/RS 133.315"
-              src={"/logo-left.png"}
-              className={s.logo}
-              width={863}
-              height={194}
-            />
-          )}
+        <motion.div
+          className={s.textContent}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.div className={s.headerInfo} variants={itemVariants}>
+            <h1 className={s.titleH1}>JÉSSICA BIRCK</h1>
+            <div className={s.subtitleWrapper}>
+              <span className={s.subtitleText}>ADVOGADA</span>
+              <span className={s.subtitleSeparator}>|</span>
+              <span className={s.subtitleText}>OAB/RS 133.315</span>
+            </div>
+          </motion.div>
 
-          <div className={s.buttonWrapper}>
-            <Button href={WHATSAPP_LINK} Icon={LiaArrowRightSolid}>
-              Entre em contato
-            </Button>
-          </div>
-          <ul className={s.itemsList}>
-            <li>
-              <LiaSuitcaseSolid />
-              Atuação Estratégica
-            </li>
-            <li>
-              <LiaCommentDotsSolid />
-              Atendimento Personalizado
-            </li>
-            <li>
-              <ImHammer2 />
-              Advocacia Especializada
-            </li>
-          </ul>
+          <motion.h2 className={s.heroStatement} variants={itemVariants}>
+            Advocacia especializada e acolhedora em Direito de Família.
+          </motion.h2>
+
+
+          <motion.div className={s.buttonGroup} variants={itemVariants}>
+            <a
+              href={WHATSAPP_LINK}
+              className={s.primaryButton}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp className={s.primaryIcon} />
+              Falar com a Dra. Jéssica
+            </a>
+            <div className={s.secondaryButtons}>
+              <a href="#especialidades" className={s.secondaryButton}>
+                Conhecer Especialidades
+              </a>
+              <Link
+                href={ROUTES.BEFORE_DIVORCE_EBOOK}
+                className={s.secondaryButton}
+              >
+                Acessar Ebooks
+              </Link>
+            </div>
+            <div className={s.bannerFooter}>
+              <a
+                href="https://www.instagram.com/jessicabirck.adv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={s.subtleLink}
+              >
+                <FaInstagram className={s.subtleIcon} />
+                Siga no Instagram
+              </a>
+              <a
+                href="https://g.page/jessicabirckadv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={s.subtleLink}
+              >
+                <FaMapMarkerAlt className={s.subtleIcon} />
+                Escritório Físico
+              </a>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        <div className={s.imageWrapper}>
+          <motion.div
+            className={s.imageContainer}
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div
+              initial={{ scale: 1.05 }}
+              animate={{ scale: 1.0 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              className={s.imageMotionWrapper}
+            >
+              <Image
+                src="/banner-image.jpeg"
+                alt="Jéssica Birck - Advogada"
+                fill
+                priority
+                style={{ objectFit: "cover" }}
+              />
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className={s.badge}
+            variants={badgeVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className={s.badgeIconWrapper}>
+              <FaGlobeAmericas />
+            </div>
+            <div className={s.badgeTextContainer}>
+              <span className={s.badgeTitle}>Atendimento Brasil</span>
+              <span className={s.badgeSubtitle}>100% Digital e Seguro</span>
+            </div>
+          </motion.div>
         </div>
-
-        {!isTablet && (
-          <div className={cn(s.themis, { [s.themisEnabled]: !isTablet })}>
-            <Image
-              fetchPriority="high"
-              priority
-              alt="Estátua da deusa Thêmis"
-              src={"/themis.png"}
-              width={1250}
-              height={1536}
-            />
-          </div>
-        )}
       </div>
     </section>
   )

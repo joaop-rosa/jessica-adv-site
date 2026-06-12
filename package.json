@@ -13,6 +13,7 @@
     "classnames": "2.5.1",
     "embla-carousel-autoplay": "8.6.0",
     "embla-carousel-react": "8.6.0",
+    "framer-motion": "12.40.0",
     "next": "16.2.9",
     "react": "19.2.7",
     "react-dom": "19.2.7",

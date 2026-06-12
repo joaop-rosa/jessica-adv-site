@@ -20,11 +20,14 @@ export function Header() {
   const isTablet = useMediaQuery({ query: "(max-width: 768px)" })
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const isBeforeDivorcePage = pathname?.includes(ROUTES.BEFORE_DIVORCE_EBOOK)
+  const isHomePage = pathname === ROUTES.HOME || pathname === "/"
 
   useEffect(() => {
     function handleScroll() {
-      setIsOnTop(window.scrollY === 0)
+      setIsOnTop(window.scrollY <= 50)
     }
+    
+    handleScroll()
 
     window.addEventListener("scroll", handleScroll)
 
@@ -42,6 +45,7 @@ export function Header() {
     <header
       className={cn(s.header, {
         [s.stickyHeader]: !isOnTop,
+        [s.hiddenAtTop]: isHomePage && isOnTop,
         [s.beforeDivorceHeader]: isBeforeDivorcePage,
       })}
     >
