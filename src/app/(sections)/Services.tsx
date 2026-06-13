@@ -1,3 +1,7 @@
+"use client"
+
+import type { Variants } from "framer-motion"
+import { motion } from "framer-motion"
 import Image from "next/image"
 import {
   LiaBalanceScaleSolid,
@@ -56,23 +60,38 @@ const CARDS = [
   },
 ]
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.1 }
+  }
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } 
+  }
+}
+
 export function Services() {
   const mainService = CARDS[0]
   const secondaryServices = CARDS.slice(1)
 
   return (
     <section id="especialidades" className={s.section}>
-      <div className={s.container}>
+      <motion.div 
+        className={s.container}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.05 }}
+      >
         <div className={s.coreSpecialty}>
-          <div className={s.imageWrapper}>
-            <Image
-              src="/services-image.jpeg"
-              alt="Direito de Família"
-              fill
-              style={{ objectFit: "cover", objectPosition: "top" }}
-            />
-          </div>
-          <div className={s.coreContent}>
+          <motion.div className={s.coreContent} variants={itemVariants}>
             <span className={s.tagline}>ESPECIALIDADE</span>
             <h3 className={s.coreTitle}>{mainService.title}</h3>
             <p className={s.coreDescription}>{mainService.description}</p>
@@ -84,24 +103,34 @@ export function Services() {
             >
               Falar sobre o meu caso &rarr;
             </a>
-          </div>
+          </motion.div>
+          <motion.div className={s.imageWrapper} variants={itemVariants}>
+            <Image
+              src="/services-image.jpeg"
+              alt="Direito de Família"
+              fill
+              style={{ objectFit: "cover", objectPosition: "top" }}
+            />
+          </motion.div>
         </div>
 
         <div className={s.secondaryAreas}>
           <div className={s.secondaryHeader}>
-            <h4 className={s.secondaryTitleBlock}>Outras frentes de atuação</h4>
+            <motion.h4 className={s.secondaryTitleBlock} variants={itemVariants}>
+              Outras frentes de atuação
+            </motion.h4>
           </div>
           <div className={s.secondaryGrid}>
             {secondaryServices.map(({ Icon, title, description }) => (
-              <div key={title} className={s.secondaryItem}>
+              <motion.div key={title} className={s.secondaryItem} variants={itemVariants}>
                 <Icon className={s.secondaryIcon} />
                 <h4 className={s.secondaryTitle}>{title}</h4>
                 <p className={s.secondaryDescription}>{description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
