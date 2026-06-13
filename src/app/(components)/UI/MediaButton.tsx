@@ -3,14 +3,17 @@ import Link from "next/link"
 import { LiaMapMarkerSolid } from "react-icons/lia"
 import { LiaInstagram } from "react-icons/lia"
 import { LiaWhatsapp } from "react-icons/lia"
+import cn from "classnames"
 import s from "./MediaButton.module.css"
 
 export function MediaButton({
   type,
   hasText = false,
+  className,
 }: {
   type: "maps" | "instagram" | "whatsapp"
   hasText?: boolean
+  className?: string
 }) {
   const typeMap = {
     maps: {
@@ -34,7 +37,7 @@ export function MediaButton({
 
   return (
     <Link
-      className={s.mediaButton}
+      className={cn(s.mediaButton, className)}
       href={typeMap[type].link}
       target="_blank"
       rel="noopener noreferrer"

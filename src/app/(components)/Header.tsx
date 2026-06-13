@@ -15,7 +15,7 @@ import { useMediaQuery } from "react-responsive"
 import { useHeader } from "@/hooks/useHeader"
 
 export function Header() {
-  const [isOnTop, setIsOnTop] = useState(true)
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const isTablet = useMediaQuery({ query: "(max-width: 768px)" })
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -24,7 +24,7 @@ export function Header() {
 
   useEffect(() => {
     function handleScroll() {
-      setIsOnTop(window.scrollY <= 50)
+      setIsScrolled(window.scrollY > 50)
     }
     
     handleScroll()
@@ -44,8 +44,8 @@ export function Header() {
   return (
     <header
       className={cn(s.header, {
-        [s.stickyHeader]: !isOnTop,
-        [s.hiddenAtTop]: isHomePage && isOnTop,
+        [s.scrolled]: isScrolled,
+        [s.hiddenAtTop]: isHomePage && !isScrolled,
         [s.beforeDivorceHeader]: isBeforeDivorcePage,
       })}
     >
@@ -96,7 +96,7 @@ function MediaButtons() {
     <div className={s.mediaButtons}>
       <MediaButton type="instagram" />
       <MediaButton type="maps" />
-      <MediaButton type="whatsapp" />
+      <MediaButton type="whatsapp" className={s.whatsappPill} />
     </div>
   )
 }
@@ -105,14 +105,14 @@ function DesktopContent() {
   const headerLinks = useHeader()
 
   return (
-    <>
+    <nav className={s.rightNav}>
       <div className={s.headerLinks}>
         {headerLinks.map((link) => (
           <HeaderLink key={link.route} route={link.route} text={link.name} />
         ))}
       </div>
       <MediaButtons />
-    </>
+    </nav>
   )
 }
 
