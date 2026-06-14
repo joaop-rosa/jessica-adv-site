@@ -54,7 +54,16 @@ export function Header() {
           [s.contentMobileMenuOpen]: isMobileMenuOpen,
         })}
       >
-        <Link className={s.logoWrapper} href={ROUTES.HOME}>
+        <Link 
+          className={s.logoWrapper} 
+          href={ROUTES.HOME}
+          onClick={(e) => {
+            if (isHomePage) {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: "smooth" })
+            }
+          }}
+        >
           <Image
             className={s.logo}
             src="/logo-header.png"
