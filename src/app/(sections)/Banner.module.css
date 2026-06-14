@@ -108,10 +108,10 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  background-color: transparent;
-  color: var(--white);
+  background-color: var(--warm-sand);
+  color: var(--shark);
   padding: 1rem 2rem;
-  border-radius: 8px;
+  border-radius: 50px;
   font-weight: 600;
   border: 1px solid var(--warm-sand);
   transition: all 0.3s ease;
@@ -120,8 +120,10 @@
 }
 
 .primaryButton:hover {
-  background-color: var(--warm-sand);
-  color: var(--thunder);
+  background-color: transparent;
+  color: var(--warm-sand);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(196, 155, 102, 0.2);
 }
 
 .primaryIcon {

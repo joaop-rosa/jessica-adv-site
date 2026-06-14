@@ -1,7 +1,7 @@
 "use client"
 
 import { Banner } from "./(sections)/Banner"
-import { SocialMedias } from "./(sections)/SocialMedias"
+import { SocialProof } from "./(sections)/SocialProof"
 import s from "./page.module.css"
 import { Footer } from "./(components)/Footer"
 import { Services } from "./(sections)/Services"
@@ -15,7 +15,7 @@ export default function Home() {
       <div className={s.divider} />
       <BeforeDivorce />
       <div className={s.divider} />
-      <SocialMedias />
+      <SocialProof />
       <Footer />
     </div>
   )

@@ -138,7 +138,7 @@ export function Banner() {
                 alt="Jéssica Birck - Advogada"
                 fill
                 priority
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", objectPosition: "center 15%" }}
               />
             </motion.div>
           </motion.div>
@@ -154,8 +154,8 @@ export function Banner() {
               <FaGlobeAmericas />
             </div>
             <div className={s.badgeTextContainer}>
-              <span className={s.badgeTitle}>Atendimento Brasil</span>
-              <span className={s.badgeSubtitle}>100% Digital e Seguro</span>
+              <span className={s.badgeTitle}>Atendimento em todo o Brasil</span>
+              <span className={s.badgeSubtitle}>100% Online e Seguro</span>
             </div>
           </motion.div>
         </div>
