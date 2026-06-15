@@ -1,9 +1,7 @@
-import { INSTAGRAM_LINK, MAPS_LINK, WHATSAPP_LINK } from "@/constants/links"
-import Link from "next/link"
-import { LiaMapMarkerSolid } from "react-icons/lia"
-import { LiaInstagram } from "react-icons/lia"
-import { LiaWhatsapp } from "react-icons/lia"
 import cn from "classnames"
+import Link from "next/link"
+import { LiaInstagram, LiaMapMarkerSolid, LiaWhatsapp } from "react-icons/lia"
+import { INSTAGRAM_LINK, MAPS_LINK, WHATSAPP_LINK } from "@/constants/links"
 import s from "./MediaButton.module.css"
 
 export function MediaButton({

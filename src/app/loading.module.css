@@ -1,7 +1,7 @@
 .loadingSection {
   position: relative;
   z-index: 10;
-  background-color: var(--thunder);
+  background: linear-gradient(180deg, rgb(46, 46, 46) 0%, rgb(79, 82, 87) 100%);
   display: flex;
   align-items: center;
   justify-content: center;

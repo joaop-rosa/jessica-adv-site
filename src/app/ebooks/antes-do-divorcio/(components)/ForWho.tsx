@@ -1,6 +1,6 @@
+import s from "./ForWho.module.css"
 import { CTAButton } from "./UI/CTAButton"
 import { EbookSection } from "./UI/EbookSection"
-import s from "./ForWho.module.css"
 
 export function ForWho() {
   const targetAudience = [
@@ -17,7 +17,7 @@ export function ForWho() {
 
       <ul className={s.list}>
         {targetAudience.map((item, index) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: Array is static
           <li key={index} className={s.listItem}>
             <div className={s.bullet}></div>
             <span className={s.itemText}>{item}</span>

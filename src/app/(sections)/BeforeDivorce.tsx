@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { ROUTES } from "@/constants/routes"
 import { LiaArrowRightSolid } from "react-icons/lia"
+import { ROUTES } from "@/constants/routes"
 import s from "./BeforeDivorce.module.css"
 
 export function BeforeDivorce() {

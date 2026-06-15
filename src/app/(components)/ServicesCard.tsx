@@ -1,9 +1,9 @@
 "use client"
 
-import type { IconType } from "react-icons"
+import cn from "classnames"
 import { motion } from "framer-motion"
 import { useState } from "react"
-import cn from "classnames"
+import type { IconType } from "react-icons"
 import s from "./ServicesCard.module.css"
 
 export function ServicesCard({
@@ -20,6 +20,7 @@ export function ServicesCard({
   const [isFlipped, setIsFlipped] = useState(false)
 
   return (
+    // biome-ignore lint/a11y/useSemanticElements: We need a div for layout purposes
     <div
       className={cn(s.container, { [s.mainCard]: isMain })}
       onMouseEnter={() => setIsFlipped(true)}

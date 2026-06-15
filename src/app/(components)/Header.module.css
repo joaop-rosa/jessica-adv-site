@@ -7,10 +7,14 @@
   width: 100%;
   background-color: var(--content-color);
   z-index: 50;
-  
+
   opacity: 1;
   transform: translateY(0);
-  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
 
 .hiddenAtTop {

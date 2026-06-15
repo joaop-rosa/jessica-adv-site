@@ -1,7 +1,7 @@
 import { FaCheck as Check } from "react-icons/fa6"
 import { IoBookOutline as BookOpen } from "react-icons/io5"
-import { EbookSection } from "./UI/EbookSection"
 import { CTAButton } from "./UI/CTAButton"
+import { EbookSection } from "./UI/EbookSection"
 import s from "./WhatYouWillFind.module.css"
 
 export function WhatYouWillFind() {
@@ -32,7 +32,7 @@ export function WhatYouWillFind() {
 
       <ul className={s.list}>
         {topics.map((topic, index) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: Array is static
           <li key={index} className={s.listItem}>
             <div className={s.checkBox}>
               <Check className={s.checkIcon} strokeWidth={3} />

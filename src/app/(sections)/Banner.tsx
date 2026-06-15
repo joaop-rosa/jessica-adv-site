@@ -74,7 +74,6 @@ export function Banner() {
             Advocacia especializada e acolhedora em Direito de Família.
           </motion.h2>
 
-
           <motion.div className={s.buttonGroup} variants={itemVariants}>
             <a
               href={WHATSAPP_LINK}

@@ -1,12 +1,12 @@
 "use client"
 
+import cn from "classnames"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa"
+import { FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa"
 import { WHATSAPP_LINK } from "@/constants/links"
 import { ROUTES } from "@/constants/routes"
-import cn from "classnames"
 import s from "./Footer.module.css"
 
 export function Footer() {
@@ -21,7 +21,7 @@ export function Footer() {
       <div className={s.container}>
         <div className={s.mainStructure}>
           <div className={s.logoWrapper}>
-            <Link 
+            <Link
               href={ROUTES.HOME}
               onClick={(e) => {
                 if (isHomePage) {
@@ -77,7 +77,8 @@ export function Footer() {
       <div className={s.container}>
         <div className={s.copyrightWrapper}>
           <p className={s.copyright}>
-            © {new Date().getFullYear()} Jéssica Birck. Todos os direitos reservados.
+            © {new Date().getFullYear()} Jéssica Birck. Todos os direitos
+            reservados.
           </p>
         </div>
       </div>

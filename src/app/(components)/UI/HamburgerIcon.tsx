@@ -1,5 +1,5 @@
-import s from "./HamburgerIcon.module.css"
 import cn from "classnames"
+import s from "./HamburgerIcon.module.css"
 
 interface HamburgerIconProps {
   onClick: () => void

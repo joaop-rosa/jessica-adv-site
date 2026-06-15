@@ -1,11 +1,11 @@
 "use client"
 
+import { Footer } from "./(components)/Footer"
 import { Banner } from "./(sections)/Banner"
+import { BeforeDivorce } from "./(sections)/BeforeDivorce"
+import { Services } from "./(sections)/Services"
 import { SocialProof } from "./(sections)/SocialProof"
 import s from "./page.module.css"
-import { Footer } from "./(components)/Footer"
-import { Services } from "./(sections)/Services"
-import { BeforeDivorce } from "./(sections)/BeforeDivorce"
 
 export default function Home() {
   return (

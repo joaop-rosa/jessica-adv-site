@@ -1,15 +1,15 @@
 "use client"
 
-import Image from "next/image"
-import s from "./Header.module.css"
 import cn from "classnames"
-import { type Dispatch, type SetStateAction, useEffect, useState } from "react"
-import { MediaButton } from "./UI/MediaButton"
-import { usePathname } from "next/navigation"
-import { ROUTES } from "@/constants/routes"
+import Image from "next/image"
 import Link from "next/link"
-import { HamburgerIcon } from "./UI/HamburgerIcon"
+import { usePathname } from "next/navigation"
+import { type Dispatch, type SetStateAction, useEffect, useState } from "react"
+import { ROUTES } from "@/constants/routes"
 import { useNoScroll } from "@/hooks/useNoScroll"
+import s from "./Header.module.css"
+import { HamburgerIcon } from "./UI/HamburgerIcon"
+import { MediaButton } from "./UI/MediaButton"
 import "@/app/globals.css"
 import { useMediaQuery } from "react-responsive"
 import { useHeader } from "@/hooks/useHeader"
@@ -26,7 +26,7 @@ export function Header() {
     function handleScroll() {
       setIsScrolled(window.scrollY > 50)
     }
-    
+
     handleScroll()
 
     window.addEventListener("scroll", handleScroll)
@@ -36,7 +36,7 @@ export function Header() {
     }
   }, [])
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  // biome-ignore lint/correctness/useExhaustiveDependencies: We only want to close the menu when the pathname changes
   useEffect(() => {
     setIsMobileMenuOpen(false)
   }, [pathname])
@@ -54,8 +54,8 @@ export function Header() {
           [s.contentMobileMenuOpen]: isMobileMenuOpen,
         })}
       >
-        <Link 
-          className={s.logoWrapper} 
+        <Link
+          className={s.logoWrapper}
           href={ROUTES.HOME}
           onClick={(e) => {
             if (isHomePage) {

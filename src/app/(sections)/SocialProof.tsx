@@ -4,8 +4,8 @@ import type { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { FaInstagram } from "react-icons/fa"
-import s from "./SocialProof.module.css"
 import { AnimatedCounter } from "../(components)/UI/AnimatedCounter"
+import s from "./SocialProof.module.css"
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -38,7 +38,7 @@ export function SocialProof() {
           <motion.div variants={itemVariants} className={s.badge}>
             Presença Digital
           </motion.div>
-          
+
           <motion.h2 variants={itemVariants} className={s.title}>
             Junte-se a uma comunidade que busca clareza e segurança jurídica.
           </motion.h2>
@@ -50,7 +50,7 @@ export function SocialProof() {
               </div>
               <span className={s.metricLabel}>+ Seguidores</span>
             </div>
-            
+
             <div className={s.metricCard}>
               <div className={s.metricNumber}>
                 <AnimatedCounter to={1000000} duration={2.5} />

@@ -1,8 +1,8 @@
-import Image from "next/image"
-import s from "./SocialMedias.module.css"
-import { LiaVideoSolid } from "react-icons/lia"
-import useEmblaCarousel from "embla-carousel-react"
 import Autoplay from "embla-carousel-autoplay"
+import useEmblaCarousel from "embla-carousel-react"
+import Image from "next/image"
+import { LiaVideoSolid } from "react-icons/lia"
+import s from "./SocialMedias.module.css"
 
 const MEDIAS = [
   {

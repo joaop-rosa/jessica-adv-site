@@ -1,9 +1,8 @@
 import { GoAlert as AlertTriangle } from "react-icons/go"
 import { LuPiggyBank as PiggyBank } from "react-icons/lu"
-
-import { EbookSection } from "./UI/EbookSection"
 import s from "./SaveMoney.module.css"
 import { CTAButton } from "./UI/CTAButton"
+import { EbookSection } from "./UI/EbookSection"
 import { InfoGrid } from "./UI/InfoGrid"
 
 export function SaveMoney() {
