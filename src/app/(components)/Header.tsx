@@ -12,8 +12,8 @@ import { HamburgerIcon } from "./UI/HamburgerIcon"
 import { MediaButton } from "./UI/MediaButton"
 import "@/app/globals.css"
 import { useMediaQuery } from "react-responsive"
-import { useHeader } from "@/hooks/useHeader"
 import { useActiveSection } from "@/hooks/useActiveSection"
+import { useHeader } from "@/hooks/useHeader"
 
 const SECTION_IDS = ["areas-de-atuacao", "presenca-digital"]
 
@@ -75,6 +75,7 @@ export function Header() {
             alt="Logo"
             width={691}
             height={126}
+            priority
             fetchPriority="high"
           />
         </Link>
@@ -93,9 +94,19 @@ export function Header() {
   )
 }
 
-function HeaderLink({ route, text, activeSection, onClick }: { route: string; text: string; activeSection: string | null; onClick?: () => void }) {
+function HeaderLink({
+  route,
+  text,
+  activeSection,
+  onClick,
+}: {
+  route: string
+  text: string
+  activeSection: string | null
+  onClick?: () => void
+}) {
   const pathname = usePathname()
-  
+
   let isActive = false
 
   if (route.startsWith("/#")) {
@@ -135,7 +146,12 @@ function DesktopContent({ activeSection }: { activeSection: string | null }) {
     <nav className={s.rightNav}>
       <div className={s.headerLinks}>
         {headerLinks.map((link) => (
-          <HeaderLink key={link.route} route={link.route} text={link.name} activeSection={activeSection} />
+          <HeaderLink
+            key={link.route}
+            route={link.route}
+            text={link.name}
+            activeSection={activeSection}
+          />
         ))}
       </div>
       <MediaButtons />

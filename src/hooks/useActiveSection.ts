@@ -25,7 +25,7 @@ export function useActiveSection(sectionIds: string[]) {
           }
         }
       },
-      { rootMargin: "-20% 0px -75% 0px", threshold: 0 }
+      { rootMargin: "-20% 0px -75% 0px", threshold: 0 },
     )
 
     for (const id of sectionIds) {

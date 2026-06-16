@@ -110,6 +110,7 @@ export function Services() {
               alt="Direito de Família"
               fill
               sizes="(max-width: 1064px) 100vw, 50vw"
+              loading="lazy"
               style={{ objectFit: "cover", objectPosition: "top" }}
             />
           </motion.div>

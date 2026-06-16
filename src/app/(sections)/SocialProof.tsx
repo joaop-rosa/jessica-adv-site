@@ -78,6 +78,7 @@ export function SocialProof() {
             alt="Jéssica Birck no Instagram"
             fill
             sizes="(max-width: 1064px) 100vw, 50vw"
+            loading="lazy"
             style={{ objectFit: "cover", objectPosition: "center 20%" }}
           />
         </motion.div>

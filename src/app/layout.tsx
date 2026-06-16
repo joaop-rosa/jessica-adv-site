@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Lato } from "next/font/google"
+import { Crimson_Pro, Lato } from "next/font/google"
 import "./globals.css"
 import { Header } from "./(components)/Header"
 
@@ -7,6 +7,14 @@ const lato = Lato({
   variable: "--font-lato",
   weight: ["400", "700"],
   subsets: ["latin"],
+  display: "swap",
+})
+
+const crimsonPro = Crimson_Pro({
+  variable: "--font-crimson",
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -20,8 +28,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${lato.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${lato.variable} ${crimsonPro.variable}`}
+      data-scroll-behavior="smooth"
+    >
+      <body suppressHydrationWarning>
         <Header />
         {children}
       </body>

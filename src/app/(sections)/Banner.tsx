@@ -53,6 +53,17 @@ export function Banner() {
 
   return (
     <section className={s.banner}>
+      <Image
+        src="/stone-texture.png"
+        alt="Textura de pedra"
+        fill
+        fetchPriority="high"
+        className={s.backgroundImage}
+        sizes="100vw"
+        style={{ objectFit: "cover" }}
+      />
+      <div className={s.backgroundOverlay} />
+
       <div className={s.container}>
         <motion.div
           className={s.textContent}
@@ -137,7 +148,8 @@ export function Banner() {
                 alt="Jéssica Birck - Advogada"
                 fill
                 sizes="(max-width: 1064px) 100vw, 50vw"
-                priority
+                loading="eager"
+                fetchPriority="high"
                 style={{ objectFit: "cover", objectPosition: "center 15%" }}
               />
             </motion.div>

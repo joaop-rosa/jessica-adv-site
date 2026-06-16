@@ -1,4 +1,3 @@
-"use client"
 
 import { Footer } from "./(components)/Footer"
 import { Banner } from "./(sections)/Banner"

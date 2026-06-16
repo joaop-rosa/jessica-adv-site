@@ -17,7 +17,7 @@
   --just-right: #ead0b3;
   --sepia-skin: #9c5b40;
   --potters-clay: #874d35;
-  --font-family-crimson: "Crimson Pro", Georgia, serif;
+  --font-family-crimson: var(--font-crimson), "Crimson Pro", Georgia, serif;
 
   --athens-gray: #f3f4f6;
   --mischka: #d1d5db;
