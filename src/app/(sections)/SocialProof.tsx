@@ -4,6 +4,7 @@ import type { Variants } from "framer-motion"
 import { m } from "framer-motion"
 import Image from "next/image"
 import { FaInstagram } from "react-icons/fa"
+import { INSTAGRAM_LINK } from "@/constants/links"
 import { AnimatedCounter } from "../(components)/UI/AnimatedCounter"
 import s from "./SocialProof.module.css"
 
@@ -61,7 +62,7 @@ export function SocialProof() {
 
           <m.div variants={itemVariants} className={s.ctaWrapper}>
             <a
-              href="https://www.instagram.com/jessicabirck.adv"
+              href={INSTAGRAM_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className={s.ctaButton}

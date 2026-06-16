@@ -10,7 +10,7 @@ import {
   FaMapMarkerAlt,
   FaWhatsapp,
 } from "react-icons/fa"
-import { WHATSAPP_LINK } from "@/constants/links"
+import { INSTAGRAM_LINK, MAPS_LINK, WHATSAPP_LINK } from "@/constants/links"
 import { ROUTES } from "@/constants/routes"
 import s from "./Banner.module.css"
 
@@ -108,7 +108,7 @@ export function Banner() {
             </div>
             <div className={s.bannerFooter}>
               <a
-                href="https://www.instagram.com/jessicabirck.adv"
+                href={INSTAGRAM_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.subtleLink}
@@ -117,7 +117,7 @@ export function Banner() {
                 Siga no Instagram
               </a>
               <a
-                href="https://g.page/jessicabirckadv"
+                href={MAPS_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.subtleLink}

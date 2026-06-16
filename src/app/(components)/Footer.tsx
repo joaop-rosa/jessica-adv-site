@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa"
-import { WHATSAPP_LINK } from "@/constants/links"
+import { INSTAGRAM_LINK, MAPS_LINK, WHATSAPP_LINK } from "@/constants/links"
 import { ROUTES } from "@/constants/routes"
 import s from "./Footer.module.css"
 
@@ -47,7 +47,7 @@ export function Footer() {
 
           <div className={s.linksWrapper}>
             <a
-              href="https://www.instagram.com/jessicabirck.adv"
+              href={INSTAGRAM_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className={s.linkItem}
@@ -65,7 +65,7 @@ export function Footer() {
               <span>WhatsApp</span>
             </a>
             <a
-              href="https://g.page/jessicabirckadv"
+              href={MAPS_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className={s.linkItem}
