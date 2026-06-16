@@ -13,11 +13,15 @@ import { MediaButton } from "./UI/MediaButton"
 import "@/app/globals.css"
 import { useMediaQuery } from "react-responsive"
 import { useHeader } from "@/hooks/useHeader"
+import { useActiveSection } from "@/hooks/useActiveSection"
+
+const SECTION_IDS = ["areas-de-atuacao", "presenca-digital"]
 
 export function Header() {
+  const activeSection = useActiveSection(SECTION_IDS)
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
-  const isTablet = useMediaQuery({ query: "(max-width: 768px)" })
+  const isTablet = useMediaQuery({ query: "(max-width: 1064px)" })
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const isBeforeDivorcePage = pathname?.includes(ROUTES.BEFORE_DIVORCE_EBOOK)
   const isHomePage = pathname === ROUTES.HOME || pathname === "/"
@@ -61,6 +65,7 @@ export function Header() {
             if (isHomePage) {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: "smooth" })
+              window.history.replaceState(null, "", window.location.pathname)
             }
           }}
         >
@@ -78,22 +83,35 @@ export function Header() {
           <MobileContent
             isMobileMenuOpen={isMobileMenuOpen}
             setIsMobileMenuOpen={setIsMobileMenuOpen}
+            activeSection={activeSection}
           />
         ) : (
-          <DesktopContent />
+          <DesktopContent activeSection={activeSection} />
         )}
       </div>
     </header>
   )
 }
 
-function HeaderLink({ route, text }: { route: string; text: string }) {
+function HeaderLink({ route, text, activeSection, onClick }: { route: string; text: string; activeSection: string | null; onClick?: () => void }) {
   const pathname = usePathname()
+  
+  let isActive = false
+
+  if (route.startsWith("/#")) {
+    const hashId = route.substring(2)
+    if (pathname === "/" && activeSection === hashId) {
+      isActive = true
+    }
+  } else if (pathname?.includes(route)) {
+    isActive = true
+  }
 
   return (
     <Link
-      className={cn(s.link, { [s.linkActive]: pathname?.includes(route) })}
+      className={cn(s.link, { [s.linkActive]: isActive })}
       href={route}
+      onClick={onClick}
     >
       {text}
     </Link>
@@ -110,14 +128,14 @@ function MediaButtons() {
   )
 }
 
-function DesktopContent() {
+function DesktopContent({ activeSection }: { activeSection: string | null }) {
   const headerLinks = useHeader()
 
   return (
     <nav className={s.rightNav}>
       <div className={s.headerLinks}>
         {headerLinks.map((link) => (
-          <HeaderLink key={link.route} route={link.route} text={link.name} />
+          <HeaderLink key={link.route} route={link.route} text={link.name} activeSection={activeSection} />
         ))}
       </div>
       <MediaButtons />
@@ -128,9 +146,11 @@ function DesktopContent() {
 function MobileContent({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
+  activeSection,
 }: {
   isMobileMenuOpen: boolean
   setIsMobileMenuOpen: Dispatch<SetStateAction<boolean>>
+  activeSection: string | null
 }) {
   const headerLinks = useHeader()
   const [isMenuMounted, setIsMenuMounted] = useState(false)
@@ -168,6 +188,8 @@ function MobileContent({
                 key={link.route}
                 route={link.route}
                 text={link.name}
+                activeSection={activeSection}
+                onClick={() => setIsMobileMenuOpen(false)}
               />
             ))}
           </div>

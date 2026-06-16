@@ -30,11 +30,17 @@
   margin: 0 auto;
 }
 
-@media (min-width: 1064px) {
+@media (min-width: 880px) {
   .container {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1064px) {
+  .container {
     gap: 4rem;
   }
 }
@@ -60,7 +66,13 @@
   letter-spacing: 2px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 880px) {
+  .titleH1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1064px) {
   .titleH1 {
     font-size: 4rem;
   }
@@ -95,7 +107,13 @@
   max-width: 600px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 880px) {
+  .heroStatement {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1064px) {
   .heroStatement {
     font-size: 1.75rem;
   }
@@ -155,17 +173,18 @@
   content: "";
   position: absolute;
   width: 100%;
-  height: 1px;
+  height: 1.5px;
   bottom: 0;
   left: 0;
   background-color: var(--warm-sand);
-  transform: scaleX(0);
+  transform: scaleX(0) translateZ(0);
   transform-origin: bottom right;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  backface-visibility: hidden;
 }
 
 .secondaryButton:hover::after {
-  transform: scaleX(1);
+  transform: scaleX(1) translateZ(0);
   transform-origin: bottom left;
 }
 
@@ -216,20 +235,30 @@
   margin: 0 auto;
 }
 
+@media (min-width: 880px) {
+  .imageWrapper {
+    flex: none;
+    width: 45%;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1064px) {
+  .imageWrapper {
+    flex: 1;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
 .imageContainer {
   position: relative;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   border-radius: 12px 12px 12px 100px;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
   border: 1px solid var(--mine-shaft);
-}
-
-@media (min-width: 1064px) {
-  .imageContainer {
-    aspect-ratio: 4 / 5;
-  }
 }
 
 .imageMotionWrapper {
@@ -252,8 +281,18 @@
   z-index: 1;
 }
 
+@media (min-width: 880px) {
+  .badge {
+    transform: scale(0.85);
+    transform-origin: bottom left;
+    bottom: 1rem;
+    left: -2rem;
+  }
+}
+
 @media (min-width: 1064px) {
   .badge {
+    transform: scale(1);
     left: -3rem;
     bottom: 3rem;
   }

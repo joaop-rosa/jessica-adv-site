@@ -24,25 +24,23 @@
 .textContent {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
 .badge {
+  color: var(--warm-sand);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   font-size: 14px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--warm-sand);
-  border-bottom: 1px solid var(--warm-sand);
-  padding-bottom: 0.5rem;
   align-self: flex-start;
 }
 
 .title {
-  font-size: 32px;
   color: var(--white);
-  line-height: 1.3;
+  font-size: 32px;
+  line-height: 1.2;
 }
 
 @media screen and (min-width: 768px) {

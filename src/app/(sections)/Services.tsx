@@ -82,7 +82,7 @@ export function Services() {
   const secondaryServices = CARDS.slice(1)
 
   return (
-    <section id="especialidades" className={s.section}>
+    <section id="areas-de-atuacao" className={s.section}>
       <motion.div
         className={s.container}
         variants={containerVariants}
@@ -109,6 +109,7 @@ export function Services() {
               src="/services-image.jpeg"
               alt="Direito de Família"
               fill
+              sizes="(max-width: 1064px) 100vw, 50vw"
               style={{ objectFit: "cover", objectPosition: "top" }}
             />
           </motion.div>

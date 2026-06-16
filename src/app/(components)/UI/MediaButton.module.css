@@ -15,7 +15,7 @@
 
 .mediaButton:hover,
 .mediaButton:focus-visible {
-  color: var(--silver-chalice);
+  color: var(--warm-sand);
 }
 
 @media screen and (max-width: 500px) {

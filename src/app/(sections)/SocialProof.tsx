@@ -26,13 +26,13 @@ const itemVariants: Variants = {
 
 export function SocialProof() {
   return (
-    <section className={s.section}>
+    <section id="presenca-digital" className={s.section}>
       <motion.div
         className={s.container}
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
       >
         <div className={s.textContent}>
           <motion.div variants={itemVariants} className={s.badge}>
@@ -77,6 +77,7 @@ export function SocialProof() {
             src="/instagram-image.jpeg"
             alt="Jéssica Birck no Instagram"
             fill
+            sizes="(max-width: 1064px) 100vw, 50vw"
             style={{ objectFit: "cover", objectPosition: "center 20%" }}
           />
         </motion.div>

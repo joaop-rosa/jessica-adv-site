@@ -85,8 +85,8 @@ export function Banner() {
               Falar com a Dra. Jéssica
             </a>
             <div className={s.secondaryButtons}>
-              <a href="#especialidades" className={s.secondaryButton}>
-                Conhecer Especialidades
+              <a href="#areas-de-atuacao" className={s.secondaryButton}>
+                Conhecer Áreas de Atuação
               </a>
               <Link
                 href={ROUTES.BEFORE_DIVORCE_EBOOK}
@@ -136,6 +136,7 @@ export function Banner() {
                 src="/banner-image.jpeg"
                 alt="Jéssica Birck - Advogada"
                 fill
+                sizes="(max-width: 1064px) 100vw, 50vw"
                 priority
                 style={{ objectFit: "cover", objectPosition: "center 15%" }}
               />

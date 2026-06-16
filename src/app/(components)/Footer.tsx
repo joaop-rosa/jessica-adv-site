@@ -27,6 +27,7 @@ export function Footer() {
                 if (isHomePage) {
                   e.preventDefault()
                   window.scrollTo({ top: 0, behavior: "smooth" })
+                  window.history.replaceState(null, "", window.location.pathname)
                 }
               }}
             >
