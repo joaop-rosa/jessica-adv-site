@@ -1,7 +1,7 @@
 "use client"
 
 import type { Variants } from "framer-motion"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -57,7 +57,7 @@ export function Banner() {
         src="/stone-texture.png"
         alt="Textura de pedra"
         fill
-        fetchPriority="high"
+        priority
         className={s.backgroundImage}
         sizes="100vw"
         style={{ objectFit: "cover" }}
@@ -65,27 +65,27 @@ export function Banner() {
       <div className={s.backgroundOverlay} />
 
       <div className={s.container}>
-        <motion.div
+        <m.div
           className={s.textContent}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <motion.div className={s.headerInfo} variants={itemVariants}>
+          <m.div className={s.headerInfo} variants={itemVariants}>
             <h1 className={s.titleH1}>JÉSSICA BIRCK</h1>
             <div className={s.subtitleWrapper}>
               <span className={s.subtitleText}>ADVOGADA</span>
               <span className={s.subtitleSeparator}>|</span>
               <span className={s.subtitleText}>OAB/RS 133.315</span>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.h2 className={s.heroStatement} variants={itemVariants}>
+          <m.h2 className={s.heroStatement} variants={itemVariants}>
             Advocacia especializada e acolhedora em Direito de Família.
-          </motion.h2>
+          </m.h2>
 
-          <motion.div className={s.buttonGroup} variants={itemVariants}>
+          <m.div className={s.buttonGroup} variants={itemVariants}>
             <a
               href={WHATSAPP_LINK}
               className={s.primaryButton}
@@ -126,18 +126,18 @@ export function Banner() {
                 Escritório Físico
               </a>
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
         <div className={s.imageWrapper}>
-          <motion.div
+          <m.div
             className={s.imageContainer}
             variants={imageVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <motion.div
+            <m.div
               initial={{ scale: 1.05 }}
               animate={{ scale: 1.0 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
@@ -148,14 +148,14 @@ export function Banner() {
                 alt="Jéssica Birck - Advogada"
                 fill
                 sizes="(max-width: 1064px) 100vw, 50vw"
-                loading="eager"
                 fetchPriority="high"
+                priority
                 style={{ objectFit: "cover", objectPosition: "center 15%" }}
               />
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             className={s.badge}
             variants={badgeVariants}
             initial="hidden"
@@ -169,7 +169,7 @@ export function Banner() {
               <span className={s.badgeTitle}>Atendimento em todo o Brasil</span>
               <span className={s.badgeSubtitle}>100% Online e Seguro</span>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

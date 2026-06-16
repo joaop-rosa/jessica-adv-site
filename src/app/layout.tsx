@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Crimson_Pro, Lato } from "next/font/google"
 import "./globals.css"
+import { AnimationProvider } from "@/providers/AnimationProvider"
 import { Header } from "./(components)/Header"
 
 const lato = Lato({
@@ -34,8 +35,10 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body suppressHydrationWarning>
-        <Header />
-        {children}
+        <AnimationProvider>
+          <Header />
+          {children}
+        </AnimationProvider>
       </body>
     </html>
   )

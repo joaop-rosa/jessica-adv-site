@@ -6,7 +6,7 @@ import s from "./BeforeDivorce.module.css"
 export function BeforeDivorce() {
   return (
     <section className={s.section}>
-      <div className={s.bgOverlay}>
+      <div className={s.bgOverlay} aria-hidden="true">
         <div className={s.blobTopRight}></div>
         <div className={s.blobBottomLeft}></div>
       </div>

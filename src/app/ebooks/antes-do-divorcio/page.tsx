@@ -1,4 +1,3 @@
-
 import { Footer } from "@/app/(components)/Footer"
 import { Banner } from "./(components)/Banner"
 import { FinalMessage } from "./(components)/FinalMessage"

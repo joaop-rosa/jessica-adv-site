@@ -22,6 +22,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const isTablet = useMediaQuery({ query: "(max-width: 1064px)" })
+  const [mounted, setMounted] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const isBeforeDivorcePage = pathname?.includes(ROUTES.BEFORE_DIVORCE_EBOOK)
   const isHomePage = pathname === ROUTES.HOME || pathname === "/"
@@ -38,6 +39,10 @@ export function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
+  }, [])
+
+  useEffect(() => {
+    setMounted(true)
   }, [])
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: We only want to close the menu when the pathname changes
@@ -80,12 +85,16 @@ export function Header() {
           />
         </Link>
 
-        {isTablet ? (
-          <MobileContent
-            isMobileMenuOpen={isMobileMenuOpen}
-            setIsMobileMenuOpen={setIsMobileMenuOpen}
-            activeSection={activeSection}
-          />
+        {mounted ? (
+          isTablet ? (
+            <MobileContent
+              isMobileMenuOpen={isMobileMenuOpen}
+              setIsMobileMenuOpen={setIsMobileMenuOpen}
+              activeSection={activeSection}
+            />
+          ) : (
+            <DesktopContent activeSection={activeSection} />
+          )
         ) : (
           <DesktopContent activeSection={activeSection} />
         )}

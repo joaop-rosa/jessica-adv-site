@@ -1,7 +1,7 @@
 "use client"
 
 import type { Variants } from "framer-motion"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import Image from "next/image"
 import {
   LiaBalanceScaleSolid,
@@ -83,7 +83,7 @@ export function Services() {
 
   return (
     <section id="areas-de-atuacao" className={s.section}>
-      <motion.div
+      <m.div
         className={s.container}
         variants={containerVariants}
         initial="hidden"
@@ -91,7 +91,7 @@ export function Services() {
         viewport={{ once: true, amount: 0.05 }}
       >
         <div className={s.coreSpecialty}>
-          <motion.div className={s.coreContent} variants={itemVariants}>
+          <m.div className={s.coreContent} variants={itemVariants}>
             <span className={s.tagline}>ESPECIALIDADE</span>
             <h3 className={s.coreTitle}>{mainService.title}</h3>
             <p className={s.coreDescription}>{mainService.description}</p>
@@ -103,8 +103,8 @@ export function Services() {
             >
               Falar sobre o meu caso &rarr;
             </a>
-          </motion.div>
-          <motion.div className={s.imageWrapper} variants={itemVariants}>
+          </m.div>
+          <m.div className={s.imageWrapper} variants={itemVariants}>
             <Image
               src="/services-image.jpeg"
               alt="Direito de Família"
@@ -113,21 +113,18 @@ export function Services() {
               loading="lazy"
               style={{ objectFit: "cover", objectPosition: "top" }}
             />
-          </motion.div>
+          </m.div>
         </div>
 
         <div className={s.secondaryAreas}>
           <div className={s.secondaryHeader}>
-            <motion.h4
-              className={s.secondaryTitleBlock}
-              variants={itemVariants}
-            >
+            <m.h4 className={s.secondaryTitleBlock} variants={itemVariants}>
               Outras frentes de atuação
-            </motion.h4>
+            </m.h4>
           </div>
           <div className={s.secondaryGrid}>
             {secondaryServices.map(({ Icon, title, description }) => (
-              <motion.div
+              <m.div
                 key={title}
                 className={s.secondaryItem}
                 variants={itemVariants}
@@ -135,11 +132,11 @@ export function Services() {
                 <Icon className={s.secondaryIcon} />
                 <h4 className={s.secondaryTitle}>{title}</h4>
                 <p className={s.secondaryDescription}>{description}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   )
 }

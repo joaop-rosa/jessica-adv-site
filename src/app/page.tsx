@@ -1,10 +1,18 @@
+import dynamic from "next/dynamic"
 
-import { Footer } from "./(components)/Footer"
 import { Banner } from "./(sections)/Banner"
 import { BeforeDivorce } from "./(sections)/BeforeDivorce"
-import { Services } from "./(sections)/Services"
-import { SocialProof } from "./(sections)/SocialProof"
 import s from "./page.module.css"
+
+const Footer = dynamic(() =>
+  import("./(components)/Footer").then((mod) => mod.Footer),
+)
+const Services = dynamic(() =>
+  import("./(sections)/Services").then((mod) => mod.Services),
+)
+const SocialProof = dynamic(() =>
+  import("./(sections)/SocialProof").then((mod) => mod.SocialProof),
+)
 
 export default function Home() {
   return (

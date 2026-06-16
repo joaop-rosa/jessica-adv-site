@@ -12,6 +12,8 @@ export function HamburgerIcon({ onClick, isOpen }: HamburgerIconProps) {
       type="button"
       className={cn(s.container, { [s.open]: isOpen })}
       onClick={onClick}
+      aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+      aria-expanded={isOpen}
     >
       <div className={s.line} />
       <div className={s.line} />

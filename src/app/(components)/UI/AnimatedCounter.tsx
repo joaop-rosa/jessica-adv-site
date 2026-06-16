@@ -2,7 +2,7 @@
 
 import {
   animate,
-  motion,
+  m,
   useInView,
   useMotionValue,
   useTransform,
@@ -35,5 +35,5 @@ export function AnimatedCounter({
     Math.floor(latest).toLocaleString("pt-BR"),
   )
 
-  return <motion.span ref={ref}>{display}</motion.span>
+  return <m.span ref={ref}>{display}</m.span>
 }

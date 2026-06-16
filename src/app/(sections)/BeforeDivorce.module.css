@@ -50,10 +50,11 @@
 
 .preTitle {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--sepia-skin);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid var(--sepia-skin);
   margin-bottom: 15px;
 }

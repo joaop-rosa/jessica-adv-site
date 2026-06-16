@@ -1,7 +1,7 @@
 "use client"
 
 import cn from "classnames"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { useState } from "react"
 import type { IconType } from "react-icons"
 import s from "./ServicesCard.module.css"
@@ -35,7 +35,7 @@ export function ServicesCard({
       role="button"
       tabIndex={0}
     >
-      <motion.div
+      <m.div
         className={s.flipInner}
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
@@ -54,7 +54,7 @@ export function ServicesCard({
             <p className={s.description}>{description}</p>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   )
 }

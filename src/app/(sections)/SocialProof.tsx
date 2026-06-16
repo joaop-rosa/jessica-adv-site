@@ -1,7 +1,7 @@
 "use client"
 
 import type { Variants } from "framer-motion"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import Image from "next/image"
 import { FaInstagram } from "react-icons/fa"
 import { AnimatedCounter } from "../(components)/UI/AnimatedCounter"
@@ -27,7 +27,7 @@ const itemVariants: Variants = {
 export function SocialProof() {
   return (
     <section id="presenca-digital" className={s.section}>
-      <motion.div
+      <m.div
         className={s.container}
         variants={containerVariants}
         initial="hidden"
@@ -35,15 +35,15 @@ export function SocialProof() {
         viewport={{ once: true, amount: 0.05 }}
       >
         <div className={s.textContent}>
-          <motion.div variants={itemVariants} className={s.badge}>
+          <m.div variants={itemVariants} className={s.badge}>
             Presença Digital
-          </motion.div>
+          </m.div>
 
-          <motion.h2 variants={itemVariants} className={s.title}>
+          <m.h2 variants={itemVariants} className={s.title}>
             Junte-se a uma comunidade que busca clareza e segurança jurídica.
-          </motion.h2>
+          </m.h2>
 
-          <motion.div variants={itemVariants} className={s.metricsGrid}>
+          <m.div variants={itemVariants} className={s.metricsGrid}>
             <div className={s.metricCard}>
               <div className={s.metricNumber}>
                 <AnimatedCounter to={40000} duration={2} />
@@ -57,9 +57,9 @@ export function SocialProof() {
               </div>
               <span className={s.metricLabel}>+ Visualizações Mensais</span>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div variants={itemVariants} className={s.ctaWrapper}>
+          <m.div variants={itemVariants} className={s.ctaWrapper}>
             <a
               href="https://www.instagram.com/jessicabirck.adv"
               target="_blank"
@@ -69,10 +69,10 @@ export function SocialProof() {
               <FaInstagram className={s.buttonIcon} />
               Acompanhar no Instagram
             </a>
-          </motion.div>
+          </m.div>
         </div>
 
-        <motion.div variants={itemVariants} className={s.imageColumn}>
+        <m.div variants={itemVariants} className={s.imageColumn}>
           <Image
             src="/instagram-image.jpeg"
             alt="Jéssica Birck no Instagram"
@@ -81,8 +81,8 @@ export function SocialProof() {
             loading="lazy"
             style={{ objectFit: "cover", objectPosition: "center 20%" }}
           />
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </section>
   )
 }
