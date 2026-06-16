@@ -6,79 +6,69 @@
 - Em caso de dúvida, mantenha local.
 
 ## Estrutura orientada a rotas e features
-- O projeto usa Vite + React com roteamento baseado em arquivos de `pages/`.
-- Cada rota deve ser tratada como uma feature.
-- Organize o código por página primeiro e, dentro da página, por responsabilidade.
+- O projeto usa Next.js 16 com roteamento baseado no App Router (`src/app/`).
+- Cada rota ou componente complexo deve ser tratado como uma feature ou módulo lógico.
+- Organize o código por domínio primeiro e, dentro, por responsabilidade.
 
-### Regras para `pages/`
-- Arquivo da rota: mantenha no nível de `pages/` quando a tela for simples.
-- Pasta da rota: crie somente quando houver código específico da página além do arquivo principal.
-- Ao criar pasta da rota, use subpastas internas com prefixo `_` para sinalizar escopo local da página.
-- Em rotas baseadas em arquivo, use `export default function` no arquivo da rota quando o roteador exigir.
+### Regras para `src/app/`
+- Rotas são definidas através de pastas contendo arquivos `page.tsx` ou `layout.tsx`.
+- Crie subpastas com escopos claros. Para agrupamentos lógicos (route groups) que não devem afetar a URL, utilize a sintaxe de parênteses, ex: `(components)`, `(sections)`.
+- Tudo o que for específico de uma rota ou tela deve ficar contido no mesmo diretório ou em subdiretórios locais, se não for compartilhado globalmente.
 
 ### Convenção recomendada
-- `pages/nome-da-rota.tsx`:
-  - Use para páginas simples, sem componentes/hooks/contexts exclusivos.
-- `pages/nome-da-rota/`:
-  - Use quando a rota tiver estrutura própria.
-  - Estrutura interna sugerida:
-    - `_components/` (se necessário)
-    - `_hooks/` (se necessário)
-    - `_contexts/` (se necessário)
-    - `_modals/` (se necessário)
-    - `index.tsx` (entrada da rota)
+- Páginas que dependem de vários componentes locais devem utilizar a estrutura:
+  - `src/app/nome-da-rota/page.tsx` (entrada da rota)
+  - `src/app/nome-da-rota/(components)/`
+  - `src/app/nome-da-rota/(hooks)/`
+  - `src/app/nome-da-rota/(modals)/`
 
 ### Convenção para Modais
-- Use `src/modals/` para modais reutilizáveis entre múltiplas páginas.
-- Em features de página, use `pages/nome-da-rota/_modals/` para modais exclusivos daquela rota.
-- Modais locais devem ser registrados em um `DialogProvider` no `_layout` da própria página/feature.
-- Ao usar `_modals/`, crie `pages/nome-da-rota/_layout.tsx` para encapsular o provider e manter o escopo local.
-- Promova um modal de `_modals/` para `src/modals/` apenas quando houver reuso real em mais de uma página.
+- Use `src/modals/` para modais reutilizáveis entre múltiplas páginas em todo o app.
+- Em features específicas de rota, mantenha os modais próximos à página que os utiliza.
+- Modais globais ou locais devem ser controlados preferencialmente de forma centralizada e sem vazar regra de negócio de controle de UI para os componentes pai.
 
 ## Boas Práticas de Arquitetura
 - Separe lógica de apresentação e lógica de negócios.
-- Utilize `contexts/` globais apenas para estado realmente compartilhado entre múltiplas rotas.
+- Utilize `src/contexts/` globais apenas para estado realmente compartilhado entre múltiplas rotas (ex: providers de tema, de animações, de autenticação).
 - Prefira hooks para encapsular lógica reutilizável.
-- Mantenha o que é específico da rota dentro da própria pasta da rota.
-- Promova para `components/`, `hooks/` ou `contexts/` globais apenas o que for reutilizado por mais de uma página.
+- Promova para `src/components/`, `src/hooks/` ou `src/contexts/` globais apenas o que for reutilizado por mais de uma página.
 
 ## Organização por escopo
-- `pages/`: definição de rotas e features por tela.
-- `components/`: componentes reutilizáveis entre páginas.
-- `modals/`: modais reutilizáveis entre páginas.
-- `hooks/`: hooks reutilizáveis entre páginas.
-- `contexts/`: providers e contextos globais.
-- `infra/`: API, clientes HTTP, cookies, tratamento de erro e integrações externas.
+- `src/app/`: definição de rotas e suas features ou seções.
+- `src/components/` ou `src/app/(components)/`: componentes reutilizáveis da aplicação.
+- `src/modals/`: modais reutilizáveis globais.
+- `src/hooks/`: hooks reutilizáveis em toda a base de código.
+- `src/contexts/`: providers e contextos globais do projeto.
+- `src/styles/`: arquivos e módulos de estilo, como variáves globais (`variables.css`).
+- `src/constants/`: configurações estáticas ou constantes (links, chaves de rotas, etc).
 
 ## Diretrizes de roteamento
-- Mantenha a lógica de composição de rotas no nível de `router.ts`.
-- Evite concentrar regra de negócio em `router.ts`; a regra deve ficar na feature da página.
-- Para rotas com modais, estados locais e fluxos próprios, prefira pasta dedicada em `pages/`.
+- Evite concentrar regra de negócio em roteamento. A lógica de controle de acesso, se aplicável, deve usar Middlewares do Next.js.
+- Para rotas com modais, estados locais e fluxos próprios, encapsule tudo na pasta da rota correspondente.
 
 ### Navegação interna
-- **Sempre** utilize `Link` ou `useNavigate` do React Router para navegação interna.
-- **Nunca** use `<a href="...">` para links internos; isso causa reload completo da página.
-- Importe `Link` e `useNavigate` de `@/src/router`.
+- **Sempre** utilize o componente `<Link>` do `next/link` para navegação interna, para otimizações automáticas de prefetch.
+- **Nunca** use `<a href="...">` para links internos; isso causa reload completo da página no cliente.
+- Caso precise de navegação programática, use `useRouter` do `next/navigation` ou `next/router` dependendo do ambiente.
 
 #### Exceções (quando `<a href>` é permitido)
 - Links para **domínios externos** (ex: `https://example.com`).
 - Links para **downloads de arquivos** (ex: PDFs, imagens).
 - Links que precisam abrir em **nova aba** (`target="_blank"`) com `rel="noopener noreferrer"`.
-- Arquivos estáticos servidos pelo servidor (raro em SPA com Vite).
 
 #### Exemplos
 
 ```tsx
-// ✅ Correto - navegação interna com Link
-import { Link } from '@/src/router'
+// ✅ Correto - navegação interna com Link do Next.js
+import Link from 'next/link'
 
-<Link to="/dashboard">Dashboard</Link>
+<Link href="/dashboard">Dashboard</Link>
 
-// ✅ Correto - navegação programática com useNavigate
-import { useNavigate } from '@/src/router'
+// ✅ Correto - navegação programática
+import { useRouter } from 'next/navigation'
 
-const navigate = useNavigate()
-navigate('/settings')
+const router = useRouter()
+router.push('/settings')
 
 // ❌ Incorreto - navegação interna com <a href>
 <a href="/dashboard">Dashboard</a>
@@ -87,44 +77,35 @@ navigate('/settings')
 <a href="https://google.com" target="_blank" rel="noopener noreferrer">Google</a>
 ```
 
-### Sobre router.ts e tipos de rota
-- O arquivo `router.ts` é automaticamente gerado pelo plugin `generouted` com base nos arquivos em `pages/`.
-- Os tipos de rota (`Path`) são atualizados ao iniciar o dev server (`npm run dev`).
-- Após adicionar uma nova rota em `pages/`, inicie o dev server para que o `Link` e `useNavigate` reconheçam a nova rota.
-
 ## Exemplo de Estrutura
 ```
 src/
-  pages/
-    index.tsx
-    duel.tsx
-    about/
-      _layout.tsx
-      index.tsx
-      _components/
-        AboutCard.tsx
-      _hooks/
-        useAboutData.ts
-      _contexts/
-        AboutContext.tsx
-      _modals/
-        AboutInfoModal.tsx
-      _services/
-        aboutApi.ts
-  modals/
-    WelcomeModal.tsx
-  components/
-    Header.tsx
-    Footer.tsx
-  hooks/
-    useApi.ts
+  app/
+    layout.tsx
+    page.tsx
+    globals.css
+    (components)/
+      Header.tsx
+      Footer.tsx
+    (sections)/
+      Banner.tsx
+      Services.tsx
+    ebooks/
+      page.tsx
+      (components)/
   contexts/
-    GlobalProviders.tsx
-  infra/
-    api.ts
+    AnimationProvider.tsx
+  hooks/
+    useActiveSection.ts
+  constants/
+    routes.ts
+    links.ts
+  styles/
+    base/
+      variables.css
 ```
 
 ## Resumo de decisão
-- Comece simples com arquivo único de rota.
-- Evolua para pasta de feature quando a página crescer.
-- Evite criar pasta por padrão sem necessidade real.
+- Comece simples, priorizando a coesão.
+- Se uma página crescer, quebre-a em pastas lógicas (`(components)`, `(sections)`) dentro do seu próprio escopo.
+- Evite espalhar peças isoladas da mesma funcionalidade na raiz do projeto (`src/components`, `src/hooks`) se não for de uso geral.

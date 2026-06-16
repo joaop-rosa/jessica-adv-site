@@ -18,6 +18,28 @@
   color: var(--warm-sand);
 }
 
+.pill {
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  border: 1px solid var(--warm-sand);
+  color: var(--warm-sand);
+}
+
+.pill .mediaIcon {
+  color: var(--warm-sand);
+}
+
+.pill:hover,
+.pill:focus-visible {
+  background-color: var(--warm-sand);
+  color: var(--shark);
+}
+
+.pill:hover .mediaIcon,
+.pill:focus-visible .mediaIcon {
+  color: var(--shark);
+}
+
 @media screen and (max-width: 500px) {
   .mediaIcon {
     width: 24px;

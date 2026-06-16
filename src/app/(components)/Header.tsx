@@ -143,7 +143,7 @@ function MediaButtons() {
     <div className={s.mediaButtons}>
       <MediaButton type="instagram" />
       <MediaButton type="maps" />
-      <MediaButton type="whatsapp" className={s.whatsappPill} />
+      <MediaButton type="whatsapp" theme="pill" />
     </div>
   )
 }

@@ -7,11 +7,11 @@ import s from "./MediaButton.module.css"
 export function MediaButton({
   type,
   hasText = false,
-  className,
+  theme = "default",
 }: {
   type: "maps" | "instagram" | "whatsapp"
   hasText?: boolean
-  className?: string
+  theme?: "pill" | "default"
 }) {
   const typeMap = {
     maps: {
@@ -35,7 +35,7 @@ export function MediaButton({
 
   return (
     <Link
-      className={cn(s.mediaButton, className)}
+      className={cn(s.mediaButton, { [s.pill]: theme === "pill" })}
       href={typeMap[type].link}
       target="_blank"
       rel="noopener noreferrer"
