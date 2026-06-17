@@ -2,9 +2,9 @@ import {
   MdLightbulbOutline as Lightbulb,
   MdOutlineShield as Shield,
 } from "react-icons/md"
-import { EbookSection } from "./UI/EbookSection"
 import s from "./HowItHelps.module.css"
 import { CTAButton } from "./UI/CTAButton"
+import { EbookSection } from "./UI/EbookSection"
 import { InfoGrid } from "./UI/InfoGrid"
 
 export function HowItHelps() {

@@ -1,6 +1,6 @@
 import { GoAlert as AlertCircle } from "react-icons/go"
-import { EbookSection } from "./UI/EbookSection"
 import s from "./ImportantNote.module.css"
+import { EbookSection } from "./UI/EbookSection"
 
 export function ImportantNote() {
   return (

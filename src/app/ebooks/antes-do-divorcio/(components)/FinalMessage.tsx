@@ -1,7 +1,6 @@
-import { CTAButton } from "./UI/CTAButton"
 import { CiHeart as Heart } from "react-icons/ci"
-
 import s from "./FinalMessage.module.css"
+import { CTAButton } from "./UI/CTAButton"
 
 export function FinalMessage() {
   return (

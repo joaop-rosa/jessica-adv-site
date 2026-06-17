@@ -1,12 +1,12 @@
 import Link from "next/link"
+import { LiaArrowRightSolid } from "react-icons/lia"
 import { ROUTES } from "@/constants/routes"
-import { CTAButton } from "../ebooks/antes-do-divorcio/(components)/UI/CTAButton"
 import s from "./BeforeDivorce.module.css"
 
 export function BeforeDivorce() {
   return (
     <section className={s.section}>
-      <div className={s.bgOverlay}>
+      <div className={s.bgOverlay} aria-hidden="true">
         <div className={s.blobTopRight}></div>
         <div className={s.blobBottomLeft}></div>
       </div>
@@ -19,8 +19,9 @@ export function BeforeDivorce() {
           Um guia para evitar os maiores erros no processo de divórcio e
           proteger seus direitos e seu futuro.
         </p>
-        <Link href={ROUTES.BEFORE_DIVORCE_EBOOK}>
-          <CTAButton size="sm">Saber mais</CTAButton>
+        <Link href={ROUTES.BEFORE_DIVORCE_EBOOK} className={s.button}>
+          Saber mais
+          <LiaArrowRightSolid className={s.buttonIcon} />
         </Link>
       </div>
     </section>

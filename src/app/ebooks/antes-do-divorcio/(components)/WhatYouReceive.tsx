@@ -1,11 +1,11 @@
-import { MdOutlineFileDownload as Download } from "react-icons/md"
-import { FiFileText as FileText } from "react-icons/fi"
 import { FaRegClock as Clock } from "react-icons/fa"
+import { FiFileText as FileText } from "react-icons/fi"
 import { LuBookMarked as BookMarked } from "react-icons/lu"
-import { EbookSection } from "./UI/EbookSection"
-import s from "./WhatYouReceive.module.css"
+import { MdOutlineFileDownload as Download } from "react-icons/md"
 import { CTAButton } from "./UI/CTAButton"
+import { EbookSection } from "./UI/EbookSection"
 import { InfoGrid } from "./UI/InfoGrid"
+import s from "./WhatYouReceive.module.css"
 
 export function WhatYouReceive() {
   const items = [

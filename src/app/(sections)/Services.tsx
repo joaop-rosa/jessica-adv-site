@@ -1,13 +1,19 @@
-import { ServicesCard } from "../(components)/ServicesCard"
-import s from "./Services.module.css"
+"use client"
+
+import type { Variants } from "framer-motion"
+import { m } from "framer-motion"
+import Image from "next/image"
 import {
   LiaBalanceScaleSolid,
   LiaBriefcaseSolid,
   LiaFileContractSolid,
   LiaHandshakeSolid,
+  LiaHomeSolid,
   LiaUserFriendsSolid,
   LiaUserShieldSolid,
 } from "react-icons/lia"
+import { WHATSAPP_LINK } from "@/constants/links"
+import s from "./Services.module.css"
 
 const CARDS = [
   {
@@ -46,28 +52,91 @@ const CARDS = [
     description:
       "Atuação em ações de reparação (danos morais e materiais), cobranças, execuções e defesa em multas de trânsito, suspensão e cassação da CNH.",
   },
+  {
+    Icon: LiaHomeSolid,
+    title: "Direito Imobiliário",
+    description:
+      "Assessoria completa na compra, venda e locação de imóveis, distratos, leilões e disputas envolvendo condomínios.",
+  },
 ]
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
+  },
+}
+
 export function Services() {
+  const mainService = CARDS[0]
+  const secondaryServices = CARDS.slice(1)
+
   return (
-    <section className={s.section}>
-      <div className={s.container}>
-        <h2 className={s.title}>Áreas de Atuação</h2>
-        <h4 className={s.description}>
-          Oferecemos assessoria jurídica especializada, com a opção de
-          atendimento 100% online para todo o Brasil.
-        </h4>
-        <div className={s.cardsWrapper}>
-          {CARDS.map(({ Icon, title, description }) => (
-            <ServicesCard
-              key={title}
-              Icon={Icon}
-              title={title}
-              description={description}
+    <section id="areas-de-atuacao" className={s.section}>
+      <m.div
+        className={s.container}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.05 }}
+      >
+        <div className={s.coreSpecialty}>
+          <m.div className={s.coreContent} variants={itemVariants}>
+            <span className={s.tagline}>ESPECIALIDADE</span>
+            <h3 className={s.coreTitle}>{mainService.title}</h3>
+            <p className={s.coreDescription}>{mainService.description}</p>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.coreLink}
+            >
+              Falar sobre o meu caso &rarr;
+            </a>
+          </m.div>
+          <m.div className={s.imageWrapper} variants={itemVariants}>
+            <Image
+              src="/services-image.jpeg"
+              alt="Direito de Família"
+              fill
+              sizes="(max-width: 1064px) 100vw, 50vw"
+              loading="lazy"
+              style={{ objectFit: "cover", objectPosition: "top" }}
             />
-          ))}
+          </m.div>
         </div>
-      </div>
+
+        <div className={s.secondaryAreas}>
+          <div className={s.secondaryHeader}>
+            <m.h4 className={s.secondaryTitleBlock} variants={itemVariants}>
+              Outras frentes de atuação
+            </m.h4>
+          </div>
+          <div className={s.secondaryGrid}>
+            {secondaryServices.map(({ Icon, title, description }) => (
+              <m.div
+                key={title}
+                className={s.secondaryItem}
+                variants={itemVariants}
+              >
+                <Icon className={s.secondaryIcon} />
+                <h4 className={s.secondaryTitle}>{title}</h4>
+                <p className={s.secondaryDescription}>{description}</p>
+              </m.div>
+            ))}
+          </div>
+        </div>
+      </m.div>
     </section>
   )
 }

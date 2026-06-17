@@ -1,0 +1,39 @@
+"use client"
+
+import {
+  animate,
+  m,
+  useInView,
+  useMotionValue,
+  useTransform,
+} from "framer-motion"
+import { useEffect, useRef } from "react"
+
+interface AnimatedCounterProps {
+  from?: number
+  to: number
+  duration?: number
+}
+
+export function AnimatedCounter({
+  from = 0,
+  to,
+  duration = 2,
+}: AnimatedCounterProps) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const inView = useInView(ref, { once: true, amount: 0.5 })
+  const count = useMotionValue(from)
+
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(count, to, { duration, ease: "easeOut" })
+      return controls.stop
+    }
+  }, [inView, count, to, duration])
+
+  const display = useTransform(count, (latest) =>
+    Math.floor(latest).toLocaleString("pt-BR"),
+  )
+
+  return <m.span ref={ref}>{display}</m.span>
+}

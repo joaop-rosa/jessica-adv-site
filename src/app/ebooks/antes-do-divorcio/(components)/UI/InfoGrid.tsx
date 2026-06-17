@@ -16,7 +16,7 @@ export function InfoGrid({ items }: InfoGridProps) {
       {items.map((item, index) => {
         const Icon = item.icon
         return (
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: Array is static
           <div key={index} className={s.card}>
             <div className={s.cardIconBox}>
               <Icon className={s.cardIcon} />

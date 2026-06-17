@@ -1,30 +1,38 @@
 "use client"
 
-import Image from "next/image"
-import s from "./Header.module.css"
 import cn from "classnames"
-import { type Dispatch, type SetStateAction, useEffect, useState } from "react"
-import { MediaButton } from "./UI/MediaButton"
-import { usePathname } from "next/navigation"
-import { ROUTES } from "@/constants/routes"
+import Image from "next/image"
 import Link from "next/link"
-import { HamburgerIcon } from "./UI/HamburgerIcon"
+import { usePathname } from "next/navigation"
+import { type Dispatch, type SetStateAction, useEffect, useState } from "react"
+import { ROUTES } from "@/constants/routes"
 import { useNoScroll } from "@/hooks/useNoScroll"
+import s from "./Header.module.css"
+import { HamburgerIcon } from "./UI/HamburgerIcon"
+import { MediaButton } from "./UI/MediaButton"
 import "@/app/globals.css"
 import { useMediaQuery } from "react-responsive"
+import { useActiveSection } from "@/hooks/useActiveSection"
 import { useHeader } from "@/hooks/useHeader"
 
+const SECTION_IDS = ["areas-de-atuacao", "presenca-digital"]
+
 export function Header() {
-  const [isOnTop, setIsOnTop] = useState(true)
+  const activeSection = useActiveSection(SECTION_IDS)
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
-  const isTablet = useMediaQuery({ query: "(max-width: 768px)" })
+  const isTablet = useMediaQuery({ query: "(max-width: 1064px)" })
+  const [mounted, setMounted] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const isBeforeDivorcePage = pathname?.includes(ROUTES.BEFORE_DIVORCE_EBOOK)
+  const isHomePage = pathname === ROUTES.HOME || pathname === "/"
 
   useEffect(() => {
     function handleScroll() {
-      setIsOnTop(window.scrollY === 0)
+      setIsScrolled(window.scrollY > 50)
     }
+
+    handleScroll()
 
     window.addEventListener("scroll", handleScroll)
 
@@ -33,7 +41,11 @@ export function Header() {
     }
   }, [])
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: We only want to close the menu when the pathname changes
   useEffect(() => {
     setIsMobileMenuOpen(false)
   }, [pathname])
@@ -41,7 +53,8 @@ export function Header() {
   return (
     <header
       className={cn(s.header, {
-        [s.stickyHeader]: !isOnTop,
+        [s.scrolled]: isScrolled,
+        [s.hiddenAtTop]: isHomePage && !isScrolled,
         [s.beforeDivorceHeader]: isBeforeDivorcePage,
       })}
     >
@@ -50,37 +63,75 @@ export function Header() {
           [s.contentMobileMenuOpen]: isMobileMenuOpen,
         })}
       >
-        <Link className={s.logoWrapper} href={ROUTES.HOME}>
+        <Link
+          className={s.logoWrapper}
+          href={ROUTES.HOME}
+          onClick={(e) => {
+            if (isHomePage) {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: "smooth" })
+              window.history.replaceState(null, "", window.location.pathname)
+            }
+          }}
+        >
           <Image
             className={s.logo}
             src="/logo-header.png"
             alt="Logo"
             width={691}
             height={126}
+            priority
             fetchPriority="high"
           />
         </Link>
 
-        {isTablet ? (
-          <MobileContent
-            isMobileMenuOpen={isMobileMenuOpen}
-            setIsMobileMenuOpen={setIsMobileMenuOpen}
-          />
+        {mounted ? (
+          isTablet ? (
+            <MobileContent
+              isMobileMenuOpen={isMobileMenuOpen}
+              setIsMobileMenuOpen={setIsMobileMenuOpen}
+              activeSection={activeSection}
+            />
+          ) : (
+            <DesktopContent activeSection={activeSection} />
+          )
         ) : (
-          <DesktopContent />
+          <DesktopContent activeSection={activeSection} />
         )}
       </div>
     </header>
   )
 }
 
-function HeaderLink({ route, text }: { route: string; text: string }) {
+function HeaderLink({
+  route,
+  text,
+  activeSection,
+  onClick,
+}: {
+  route: string
+  text: string
+  activeSection: string | null
+  onClick?: () => void
+}) {
   const pathname = usePathname()
+
+  let isActive = false
+
+  if (route.startsWith("/#")) {
+    const hashId = route.substring(2)
+    if (pathname === "/" && activeSection === hashId) {
+      isActive = true
+    }
+  } else if (pathname?.includes(route)) {
+    isActive = true
+  }
 
   return (
     <Link
-      className={cn(s.link, { [s.linkActive]: pathname?.includes(route) })}
+      className={cn(s.link, { [s.linkActive]: isActive })}
       href={route}
+      onClick={onClick}
     >
       {text}
     </Link>
@@ -92,32 +143,39 @@ function MediaButtons() {
     <div className={s.mediaButtons}>
       <MediaButton type="instagram" />
       <MediaButton type="maps" />
-      <MediaButton type="whatsapp" />
+      <MediaButton type="whatsapp" theme="pill" />
     </div>
   )
 }
 
-function DesktopContent() {
+function DesktopContent({ activeSection }: { activeSection: string | null }) {
   const headerLinks = useHeader()
 
   return (
-    <>
+    <nav className={s.rightNav}>
       <div className={s.headerLinks}>
         {headerLinks.map((link) => (
-          <HeaderLink key={link.route} route={link.route} text={link.name} />
+          <HeaderLink
+            key={link.route}
+            route={link.route}
+            text={link.name}
+            activeSection={activeSection}
+          />
         ))}
       </div>
       <MediaButtons />
-    </>
+    </nav>
   )
 }
 
 function MobileContent({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
+  activeSection,
 }: {
   isMobileMenuOpen: boolean
   setIsMobileMenuOpen: Dispatch<SetStateAction<boolean>>
+  activeSection: string | null
 }) {
   const headerLinks = useHeader()
   const [isMenuMounted, setIsMenuMounted] = useState(false)
@@ -155,6 +213,8 @@ function MobileContent({
                 key={link.route}
                 route={link.route}
                 text={link.name}
+                activeSection={activeSection}
+                onClick={() => setIsMobileMenuOpen(false)}
               />
             ))}
           </div>

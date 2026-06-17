@@ -1,0 +1,89 @@
+"use client"
+
+import type { Variants } from "framer-motion"
+import { m } from "framer-motion"
+import Image from "next/image"
+import { FaInstagram } from "react-icons/fa"
+import { INSTAGRAM_LINK } from "@/constants/links"
+import { AnimatedCounter } from "../(components)/UI/AnimatedCounter"
+import s from "./SocialProof.module.css"
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
+  },
+}
+
+export function SocialProof() {
+  return (
+    <section id="presenca-digital" className={s.section}>
+      <m.div
+        className={s.container}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.05 }}
+      >
+        <div className={s.textContent}>
+          <m.div variants={itemVariants} className={s.badge}>
+            Presença Digital
+          </m.div>
+
+          <m.h2 variants={itemVariants} className={s.title}>
+            Junte-se a uma comunidade que busca clareza e segurança jurídica.
+          </m.h2>
+
+          <m.div variants={itemVariants} className={s.metricsGrid}>
+            <div className={s.metricCard}>
+              <div className={s.metricNumber}>
+                <AnimatedCounter to={40000} duration={2} />
+              </div>
+              <span className={s.metricLabel}>+ Seguidores</span>
+            </div>
+
+            <div className={s.metricCard}>
+              <div className={s.metricNumber}>
+                <AnimatedCounter to={1000000} duration={2.5} />
+              </div>
+              <span className={s.metricLabel}>+ Visualizações Mensais</span>
+            </div>
+          </m.div>
+
+          <m.div variants={itemVariants} className={s.ctaWrapper}>
+            <a
+              href={INSTAGRAM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.ctaButton}
+            >
+              <FaInstagram className={s.buttonIcon} />
+              Acompanhar no Instagram
+            </a>
+          </m.div>
+        </div>
+
+        <m.div variants={itemVariants} className={s.imageColumn}>
+          <Image
+            src="/instagram-image.jpeg"
+            alt="Jéssica Birck no Instagram"
+            fill
+            sizes="(max-width: 1064px) 100vw, 50vw"
+            loading="lazy"
+            style={{ objectFit: "cover", objectPosition: "center 20%" }}
+          />
+        </m.div>
+      </m.div>
+    </section>
+  )
+}

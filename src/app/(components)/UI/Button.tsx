@@ -1,6 +1,6 @@
+import Link from "next/link"
 import type { ComponentType, PropsWithChildren } from "react"
 import s from "./Button.module.css"
-import Link from "next/link"
 
 type ButtonProps = PropsWithChildren<{
   type?: "submit" | "button"
