@@ -36,8 +36,15 @@ export function Footer() {
               }}
             >
               <Image
-                className={s.logo}
+                className={cn(s.logo, s.logoDesktop)}
                 src="/logo-left.png"
+                alt="Jéssica Birck Advogada Logo"
+                width={940}
+                height={240}
+              />
+              <Image
+                className={cn(s.logo, s.logoMobile)}
+                src="/logo-center.png"
                 alt="Jéssica Birck Advogada Logo"
                 width={940}
                 height={240}

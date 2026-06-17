@@ -42,9 +42,28 @@
   height: 60px;
 }
 
+.logoDesktop {
+  display: block;
+}
+
+.logoMobile {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .logo {
     height: 50px;
+  }
+  
+  .logoDesktop {
+    display: none;
+  }
+  
+  .logoMobile {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
   }
 }
 
