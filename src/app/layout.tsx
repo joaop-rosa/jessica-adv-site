@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Crimson_Pro, Lato } from "next/font/google"
 import "./globals.css"
+import { GoogleTagManager } from "@next/third-parties/google"
 import { AnimationProvider } from "@/contexts/AnimationProvider"
 import { Header } from "./(components)/Header"
 
@@ -57,6 +58,7 @@ export default function RootLayout({
       className={`${lato.variable} ${crimsonPro.variable}`}
       data-scroll-behavior="smooth"
     >
+      <GoogleTagManager gtmId="GTM-5RBTC7R3" />
       <body suppressHydrationWarning>
         <AnimationProvider>
           <Header />

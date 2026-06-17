@@ -66,6 +66,8 @@ export function SocialProof() {
               target="_blank"
               rel="noopener noreferrer"
               className={s.ctaButton}
+              data-gtm="click_instagram"
+              data-gtm-location="social_proof_section"
             >
               <FaInstagram className={s.buttonIcon} />
               Acompanhar no Instagram

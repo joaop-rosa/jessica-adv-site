@@ -8,10 +8,12 @@ export function MediaButton({
   type,
   hasText = false,
   theme = "default",
+  gtmLocation,
 }: {
   type: "maps" | "instagram" | "whatsapp"
   hasText?: boolean
   theme?: "pill" | "default"
+  gtmLocation?: string
 }) {
   const typeMap = {
     maps: {
@@ -39,6 +41,8 @@ export function MediaButton({
       href={typeMap[type].link}
       target="_blank"
       rel="noopener noreferrer"
+      data-gtm={`click_${type}`}
+      data-gtm-location={gtmLocation}
     >
       <Icon className={s.mediaIcon} />
       {hasText && <span>{typeMap[type].text}</span>}

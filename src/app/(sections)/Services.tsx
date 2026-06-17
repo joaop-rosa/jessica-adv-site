@@ -100,6 +100,8 @@ export function Services() {
               target="_blank"
               rel="noopener noreferrer"
               className={s.coreLink}
+              data-gtm="click_whatsapp"
+              data-gtm-location="services_section"
             >
               Falar sobre o meu caso &rarr;
             </a>

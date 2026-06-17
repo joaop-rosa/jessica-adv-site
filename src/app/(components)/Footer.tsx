@@ -58,6 +58,8 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className={s.linkItem}
+              data-gtm="click_instagram"
+              data-gtm-location="footer"
             >
               <FaInstagram className={s.icon} />
               <span>Instagram</span>
@@ -67,6 +69,8 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className={s.linkItem}
+              data-gtm="click_whatsapp"
+              data-gtm-location="footer"
             >
               <FaWhatsapp className={s.icon} />
               <span>WhatsApp</span>
@@ -76,6 +80,8 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className={s.linkItem}
+              data-gtm="click_maps"
+              data-gtm-location="footer"
             >
               <FaMapMarkerAlt className={s.icon} />
               <span>Escritório</span>

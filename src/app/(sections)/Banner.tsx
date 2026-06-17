@@ -91,17 +91,21 @@ export function Banner() {
               className={s.primaryButton}
               target="_blank"
               rel="noopener noreferrer"
+              data-gtm="click_whatsapp"
+              data-gtm-location="banner_home"
             >
               <FaWhatsapp className={s.primaryIcon} />
               Falar com a Dra. Jéssica
             </a>
             <div className={s.secondaryButtons}>
-              <a href="#areas-de-atuacao" className={s.secondaryButton}>
+              <a href="#areas-de-atuacao" className={s.secondaryButton} data-gtm="click_anchor" data-gtm-location="banner_home_areas">
                 Conhecer Áreas de Atuação
               </a>
               <Link
                 href={ROUTES.BEFORE_DIVORCE_EBOOK}
                 className={s.secondaryButton}
+                data-gtm="click_view_ebook"
+                data-gtm-location="banner_home"
               >
                 Acessar Ebooks
               </Link>
@@ -112,6 +116,8 @@ export function Banner() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.subtleLink}
+                data-gtm="click_instagram"
+                data-gtm-location="banner_home"
               >
                 <FaInstagram className={s.subtleIcon} />
                 Siga no Instagram
@@ -121,6 +127,8 @@ export function Banner() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.subtleLink}
+                data-gtm="click_maps"
+                data-gtm-location="banner_home"
               >
                 <FaMapMarkerAlt className={s.subtleIcon} />
                 Escritório Físico

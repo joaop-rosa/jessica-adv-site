@@ -15,6 +15,8 @@ export function CTAButton({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(s.ctaButton, { [s.ctaButtonSmall]: size === "sm" })}
+      data-gtm="begin_checkout"
+      data-gtm-item="o_que_toda_mulher_precisa_saber_antes_do_divorcio"
     >
       {children}
       <LiaArrowRightSolid className={s.arrowIcon} />

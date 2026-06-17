@@ -138,12 +138,12 @@ function HeaderLink({
   )
 }
 
-function MediaButtons() {
+function MediaButtons({ gtmLocation }: { gtmLocation?: string }) {
   return (
     <div className={s.mediaButtons}>
-      <MediaButton type="instagram" />
-      <MediaButton type="maps" />
-      <MediaButton type="whatsapp" theme="pill" />
+      <MediaButton type="instagram" gtmLocation={gtmLocation} />
+      <MediaButton type="maps" gtmLocation={gtmLocation} />
+      <MediaButton type="whatsapp" theme="pill" gtmLocation={gtmLocation} />
     </div>
   )
 }
@@ -163,7 +163,7 @@ function DesktopContent({ activeSection }: { activeSection: string | null }) {
           />
         ))}
       </div>
-      <MediaButtons />
+      <MediaButtons gtmLocation="header" />
     </nav>
   )
 }
@@ -218,7 +218,7 @@ function MobileContent({
               />
             ))}
           </div>
-          <MediaButtons />
+          <MediaButtons gtmLocation="header_mobile" />
         </div>
       )}
     </>
