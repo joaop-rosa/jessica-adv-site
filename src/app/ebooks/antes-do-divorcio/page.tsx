@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
   },
   alternates: {
-    canonical: "https://jessicabirck.adv.br/ebooks/antes-do-divorcio",
+    canonical: "/ebooks/antes-do-divorcio",
   },
 }
 
