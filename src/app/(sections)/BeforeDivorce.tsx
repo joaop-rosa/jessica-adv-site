@@ -19,7 +19,12 @@ export function BeforeDivorce() {
           Um guia para evitar os maiores erros no processo de divórcio e
           proteger seus direitos e seu futuro.
         </p>
-        <Link href={ROUTES.BEFORE_DIVORCE_EBOOK} className={s.button} data-gtm="click_view_ebook" data-gtm-location="before_divorce_section">
+        <Link
+          href={ROUTES.BEFORE_DIVORCE_EBOOK}
+          className={s.button}
+          data-gtm="click_view_ebook"
+          data-gtm-location="before_divorce_section"
+        >
           Saber mais
           <LiaArrowRightSolid className={s.buttonIcon} />
         </Link>
