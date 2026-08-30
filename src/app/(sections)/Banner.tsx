@@ -98,7 +98,12 @@ export function Banner() {
               Falar com a Dra. Jéssica
             </a>
             <div className={s.secondaryButtons}>
-              <a href="#areas-de-atuacao" className={s.secondaryButton} data-gtm="click_anchor" data-gtm-location="banner_home_areas">
+              <a
+                href="#areas-de-atuacao"
+                className={s.secondaryButton}
+                data-gtm="click_anchor"
+                data-gtm-location="banner_home_areas"
+              >
                 Conhecer Áreas de Atuação
               </a>
               <Link

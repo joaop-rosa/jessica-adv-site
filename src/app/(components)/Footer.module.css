@@ -54,11 +54,11 @@
   .logo {
     height: 50px;
   }
-  
+
   .logoDesktop {
     display: none;
   }
-  
+
   .logoMobile {
     display: block;
     width: 100%;

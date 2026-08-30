@@ -20,30 +20,76 @@ const crimsonPro = Crimson_Pro({
 })
 
 export const metadata: Metadata = {
-  title: "Jéssica Birck | Advogada",
+  metadataBase: new URL("https://jessicabirck.adv.br"),
+  title: {
+    default: "Jéssica Birck | Advogada de Família e Divórcio - OAB/RS",
+    template: "%s | Jéssica Birck",
+  },
   description:
-    "Especialista em Direito de Família no RS: Divórcio, Pensão Alimentícia, Inventário e Guarda. Atendimento acolhedor e focado na sua segurança jurídica.",
+    "Advocacia especializada em Direito de Família: Divórcio, Pensão Alimentícia, Guarda e Inventário. Atendimento acolhedor presencial no RS e 100% online para todo o Brasil.",
   keywords: [
-    "Advogado",
     "Advogada",
+    "Advogado",
     "Advogada de Família",
     "Advogado de Família",
     "Advogada em Rolante",
     "Advogado em Rolante",
+    "Advogada Rolante",
+    "Advogado Rolante",
+    "Jessica Advogada",
+    "Jessica Birck",
+    "Jessica Birck Advogada",
     "Advogada Divórcio RS",
     "Advogado Divórcio RS",
+    "Direito de Família RS",
+    "Inventário RS",
+    "Pensão Alimentícia",
+    "Guarda de Filhos",
+    "Advocacia Online Brasil",
     "Direito de Família",
-    "Inventário",
   ],
+  authors: [
+    { name: "Jéssica Sabrina Birck", url: "https://jessicabirck.adv.br" },
+  ],
+  creator: "Jéssica Sabrina Birck",
+  publisher: "Jéssica Sabrina Birck",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Jéssica Birck | Advogada de Família",
+    title: "Jéssica Birck | Advogada de Família e Divórcio",
     description:
-      "Atendimento jurídico especializado, acolhedor e focado em segurança para o Direito de Família.",
+      "Advocacia especializada em Direito de Família: Divórcio, Pensão Alimentícia, Guarda e Inventário. Atendimento presencial no RS e 100% online para todo o Brasil.",
+    url: "https://jessicabirck.adv.br",
+    siteName: "Jéssica Birck Advocacia",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Jéssica Birck - Advogada | OAB/RS 133.315",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jéssica Birck | Advogada de Família e Divórcio",
+    description:
+      "Advocacia especializada em Direito de Família no RS e atendimento online em todo o Brasil.",
+    images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://jessicabirck.adv.br",
+    canonical: "/",
   },
 }
 
@@ -54,7 +100,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={`${lato.variable} ${crimsonPro.variable}`}
       data-scroll-behavior="smooth"
     >
